@@ -9,17 +9,27 @@ namespace cpv
     public:
         /*
          * Default constructor
-         * Creates force of (0, 0, 0)
+         * Creates vector of (0, 0, 0)
          */
         CpvVector3() : x(0), y(0), z(0) {}
 
         /*
-         * Constructor with x, y and z components of the force
+         * Constructor with x, y and z components of the vector
          */
         CpvVector3(double x, double y, double z) : x(x), y(y), z(z) {}
 
+        // getters
+        double getX() const { return x; }
+        double getY() const { return y; }
+        double getZ() const { return z; }
+
+        // setters
+        void setX(double x) { this->x = x; }
+        void setY(double y) { this->y = y; }
+        void setZ(double z) { this->z = z; }
+
         /*
-         * Returns magnitude of the force
+         * Returns magnitude of the vector
          */
         double getMagnitude() const
         {
@@ -27,7 +37,7 @@ namespace cpv
         }
 
         /*
-         * Add two forces together and return resulting force
+         * Add two vectors together and return resulting vector
          */
         CpvVector3 operator+(const CpvVector3 &other) const
         {
@@ -35,7 +45,7 @@ namespace cpv
         }
 
         /*
-         * Subtract two forces and return resulting force
+         * Subtract two vectors and return resulting vector
          */
         CpvVector3 operator-(const CpvVector3 &other) const
         {
@@ -43,7 +53,7 @@ namespace cpv
         }
 
         /*
-         * Multiply force by a scalar and return resulting force
+         * Multiply vector by a scalar and return resulting vector
          */
         CpvVector3 operator*(double scalar) const
         {

@@ -80,12 +80,37 @@ namespace cpv
 
         /**
          * @brief Get y value for the specified x and z values
-         * 
+         *
          * @param x the x value
          * @param z the z value
          * @return y value
          */
-        double getYValue(double x, double z) {
+        double getYValue(double x, double z)
+        {
+            // Find the index of the curve function to use
+            auto ptr = std::lower_bound(zAxisForEachCurve.begin(), zAxisForEachCurve.end(), z);
+
+            // Get the curve function to use
+            // - zAxosForEachCurve.begin() is used to get the index of the curve function, not the address
+            CpvFunctionCurve2 curveFunction1 = curveFunctions[ptr - zAxisForEachCurve.begin()];
+            CpvFunctionCurve2 curveFunction2 = curveFunctions[ptr - zAxisForEachCurve.begin() + 1];
+
+            // Get the y values for the x value
+            double y1 = curveFunction1.getYValue(x);
+            double y2 = curveFunction2.getYValue(x);
+
+            return std::abs(y2 - y1) / 2;
+        }
+
+        /**
+         * @brief Get y value for the specified x and z values
+         *
+         * @param x the x value
+         * @param z the z value
+         * @return y value
+         */
+        double getYValue(int x, int z)
+        {
             // Find the index of the curve function to use
             auto ptr = std::lower_bound(zAxisForEachCurve.begin(), zAxisForEachCurve.end(), z);
 
@@ -109,8 +134,6 @@ namespace cpv
             curveFunctions.clear();
             zAxisForEachCurve.clear();
         }
-
-
 
     private:
         std::vector<CpvFunctionCurve2> curveFunctions;

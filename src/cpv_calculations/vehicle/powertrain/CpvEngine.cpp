@@ -47,15 +47,15 @@ namespace cpv
         }
 
         // Calculate the torque [N*m] at the current rpm and throttle
-        double CpvEngine::calculateTorque() const
+        double CpvEngine::calculateTorque()
         {
-            return torqueCurve.getYValue(rpm, throttle);
+            return torqueCurve.getYValue(1.0 * rpm, throttle);
         }
 
         // Calculate the power [Watt] at the current rpm and throttle
-        double CpvEngine::calculatePower() const
+        double CpvEngine::calculatePower()
         {
-            return torqueCurve.getYValue(rpm, throttle) * rpm / 9549.0;
+            return torqueCurve.getYValue(1.0 * rpm, throttle) * rpm / 9549.0;
         }
 
         // getters

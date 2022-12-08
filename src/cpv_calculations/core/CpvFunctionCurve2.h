@@ -130,6 +130,48 @@ namespace cpv
             return std::abs(y2 - y1) / 2;
         }
 
+        /**
+         * @brief Returns the value of the function curve at the specified x value
+         *
+         * @param x the x value to get the y value for
+         * @return double the y value of the function curve at the specified x value
+         */
+        double getYValue(int x) const
+        {
+            // If the function curve is empty, return 0
+            if (points.size() == 0)
+                return 0;
+
+            // If the x value equalse the first point, return the y value of the first point
+            if (x == points[0].getX())
+                return points[0].getY();
+
+            //
+            // TODO: create custom exceptions
+            //
+
+            // If the x value is less than the first point, throw an exception
+            if (x < points[0].getX())
+                throw "The x value is less than the first point in the function curve";
+
+            // If the x value is greater than the last point, throw an exception
+            if (x > points[points.size() - 1].getX())
+                throw "The x value is greater than the last point in the function curve";
+
+            auto index = std::lower_bound(points.begin(), points.end(), CpvVector2(x, 0));
+
+            // If the x value is equal to a point, return the y value of the point
+            if (x == index->getX())
+                return index->getY();
+
+            // Get the x and y values of the two points that the x value is between
+
+            double y1 = index->getY();
+            double y2 = (index - 1)->getY();
+
+            return std::abs(y2 - y1) / 2;
+        }
+
     private:
         std::vector<CpvVector2> points;
     };

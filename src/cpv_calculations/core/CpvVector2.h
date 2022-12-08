@@ -10,14 +10,14 @@ namespace cpv
     class CpvVector2
     {
     public:
-        /*
-         * Default constructor
-         * Creates vector of (0, 0)
+        /**
+         * @brief Default constructor
+         * @details Creates vector of (0, 0)
          */
         CpvVector2() : x(0), y(0) {}
 
-        /*
-         * Constructor with x and y components of the vector
+        /**
+         * @brief Constructor with x and y components of the vector
          */
         CpvVector2(double x, double y) : x(x), y(y) {}
 
@@ -29,32 +29,43 @@ namespace cpv
         void setX(double x) { this->x = x; }
         void setY(double y) { this->y = y; }
 
-        /*
-         * Returns magnitude of the vector
+        /**
+         * @brief Returns magnitude of the vector
+         * 
+         * @return double the magnitude of the vector
          */
         double getMagnitude() const
         {
             return sqrt(x * x + y * y);
         }
 
-        /*
-         * Add two vectors together and return resulting vector
+        /**
+         * @brief Add two vectors together and return resulting vector
+         * 
+         * @param other the vector to add to this vector
+         * @return CpvVector2 the resulting vector
          */
         CpvVector2 operator+(const CpvVector2 &other) const
         {
             return CpvVector2(x + other.x, y + other.y);
         }
 
-        /*
-         * Subtract two vectors and return resulting vector
+        /**
+         * @brief Subtract two vectors and return resulting vector
+         * 
+         * @param other the vector to subtract from this vector
+         * @return CpvVector2 the resulting vector
          */
         CpvVector2 operator-(const CpvVector2 &other) const
         {
             return CpvVector2(x - other.x, y - other.y);
         }
 
-        /*
-         * Multiply vector by a scalar and return resulting vector
+        /**
+         * @brief Multiply vector by a scalar and return resulting vector
+         * 
+         * @param scalar the scalar to multiply the vector by
+         * @return CpvVector2 the resulting vector
          */
         CpvVector2 operator*(double scalar) const
         {

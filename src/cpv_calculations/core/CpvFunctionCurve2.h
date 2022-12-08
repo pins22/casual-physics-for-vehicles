@@ -1,5 +1,5 @@
-#ifndef CPV_FUNCTION_CURVE_H
-#define CPV_FUNCTION_CURVE_H
+#ifndef CPV_FUNCTION_CURVE2_H
+#define CPV_FUNCTION_CURVE2_H
 
 #include <vector>
 #include <stdlib.h>
@@ -7,72 +7,90 @@
 
 namespace cpv
 {
-    class CpvFunctionCurve
+    class CpvFunctionCurve2
     {
     public:
-        /*
-         * Default constructor
+        /**
+         * @brief Default constructor
          * Creates an empty function curve
          */
-        CpvFunctionCurve() {}
+        CpvFunctionCurve2() {}
 
-        /*
-         * Constructor with a vector of points
+        /**
+         * @brief Constructor with a vector of points
+         * 
+         * @param points the vector of points to use
+         * 
          */
-        CpvFunctionCurve(std::vector<CpvVector2> points) : points(points) {}
+        CpvFunctionCurve2(std::vector<CpvVector2> points) : points(points) {}
 
-        /*
-         * Returns the number of points in the function curve
+        /**
+         * @brief Returns the number of points in the function curve
+         * 
+         * @return int the number of points in the function curve
          */
         int getNumberOfPoints() const
         {
             return points.size();
         }
 
-        /*
-         * Returns the point at the specified index
+        /**
+         * @brief Returns the point at the specified index
+         * 
+         * @param index the index of the point to return
+         * @return CpvVector2 the point at the specified index
          */
         CpvVector2 getPoint(int index) const
         {
             return points[index];
         }
 
-        /*
-         * Adds a point to the function curve with the specified vector point
+        /**
+         * @brief Adds a point to the function curve with the specified vector point
+         * 
+         * @param point the point to add
          */
         void addPoint(CpvVector2 point)
         {
             points.push_back(point);
         }
 
-        /*
-         * Adds a point to the function curve with the specified x and y values
+        /**
+         * @brief Adds a point to the function curve with the specified x and y values
+         * 
+         * @param x the x value of the point
+         * @param y the y value of the point
          */
         void addPoint(double x, double y)
         {
             points.push_back(CpvVector2(x, y));
         }
 
-        /*
-         * Removes the point at the specified index
+        /**
+         * @brief Removes the point at the specified index
+         * 
+         * @param index the index of the point to remove
          */
         void removePoint(int index)
         {
             points.erase(points.begin() + index);
         }
 
-        /*
-         * Removes all points from the function curve
+        /**
+         * @brief Removes all points from the function curve
          */
         void clear()
         {
             points.clear();
         }
 
-        /*
-         * Returns the value of the function curve at the specified x value
+        /**
+         * @brief Returns the value of the function curve at the specified x value
+         * 
+         * @param x the x value to get the y value for
+         * @return double the y value of the function curve at the specified x value
          */
-        double getValue(double x) const
+        double getYValue(double x) const
         {
             // If the function curve is empty, return 0
             if (points.size() == 0)

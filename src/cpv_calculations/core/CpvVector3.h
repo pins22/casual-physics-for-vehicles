@@ -10,14 +10,18 @@ namespace cpv
     class CpvVector3
     {
     public:
-        /*
-         * Default constructor
-         * Creates vector of (0, 0, 0)
+        /**
+         * @brief Default constructor
+         * @details Creates vector of (0, 0, 0)
          */
         CpvVector3() : x(0), y(0), z(0) {}
 
-        /*
-         * Constructor with x, y and z components of the vector
+        /**
+         * @brief Constructor with x, y and z components of the vector
+         * 
+         * @param x the x component of the vector
+         * @param y the y component of the vector
+         * @param z the z component of the vector
          */
         CpvVector3(double x, double y, double z) : x(x), y(y), z(z) {}
 
@@ -31,32 +35,43 @@ namespace cpv
         void setY(double y) { this->y = y; }
         void setZ(double z) { this->z = z; }
 
-        /*
-         * Returns magnitude of the vector
+        /**
+         * @brief Returns magnitude of the vector
+         * 
+         * @return double the magnitude of the vector
          */
         double getMagnitude() const
         {
             return sqrt(x * x + y * y + z * z);
         }
 
-        /*
-         * Add two vectors together and return resulting vector
+        /**
+         * @brief Add two vectors together and return resulting vector
+         * 
+         * @param other the vector to add to this vector
+         * @return CpvVector3 the resulting vector
          */
         CpvVector3 operator+(const CpvVector3 &other) const
         {
             return CpvVector3(x + other.x, y + other.y, z + other.z);
         }
 
-        /*
-         * Subtract two vectors and return resulting vector
+        /**
+         * @brief Subtract two vectors and return resulting vector
+         * 
+         * @param other the vector to subtract from this vector
+         * @return CpvVector3 the resulting vector
          */
         CpvVector3 operator-(const CpvVector3 &other) const
         {
             return CpvVector3(x - other.x, y - other.y, z - other.z);
         }
 
-        /*
-         * Multiply vector by a scalar and return resulting vector
+        /**
+         * @brief Multiply vector by a scalar and return resulting vector
+         * 
+         * @param scalar the scalar to multiply the vector by
+         * @return CpvVector3 the resulting vector
          */
         CpvVector3 operator*(double scalar) const
         {

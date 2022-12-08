@@ -4,19 +4,19 @@ using namespace std;
 
 namespace cpv
 {
-    class CpvForce
+    class CpvVector3
     {
     public:
         /*
          * Default constructor
          * Creates force of (0, 0, 0)
          */
-        CpvForce() : x(0), y(0), z(0) {}
+        CpvVector3() : x(0), y(0), z(0) {}
 
         /*
          * Constructor with x, y and z components of the force
          */
-        CpvForce(double x, double y, double z) : x(x), y(y), z(z) {}
+        CpvVector3(double x, double y, double z) : x(x), y(y), z(z) {}
 
         /*
          * Returns magnitude of the force
@@ -29,25 +29,25 @@ namespace cpv
         /*
          * Add two forces together and return resulting force
          */
-        CpvForce operator+(const CpvForce &other) const
+        CpvVector3 operator+(const CpvVector3 &other) const
         {
-            return CpvForce(x + other.x, y + other.y, z + other.z);
+            return CpvVector3(x + other.x, y + other.y, z + other.z);
         }
 
         /*
          * Subtract two forces and return resulting force
          */
-        CpvForce operator-(const CpvForce &other) const
+        CpvVector3 operator-(const CpvVector3 &other) const
         {
-            return CpvForce(x - other.x, y - other.y, z - other.z);
+            return CpvVector3(x - other.x, y - other.y, z - other.z);
         }
 
         /*
          * Multiply force by a scalar and return resulting force
          */
-        CpvForce operator*(double scalar) const
+        CpvVector3 operator*(double scalar) const
         {
-            return CpvForce(x * scalar, y * scalar, z * scalar);
+            return CpvVector3(x * scalar, y * scalar, z * scalar);
         }
 
     private:

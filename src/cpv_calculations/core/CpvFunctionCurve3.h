@@ -3,14 +3,14 @@
 
 #include <vector>
 #include <stdlib.h>
-#include "CpvVector3.h"
+#include "CpvFunctionCurve2.h"
 
 namespace cpv
 {
     /// @brief
     /// A class that represents a mathematical 3D function curve
     /// @details
-    /// A function curve is a mathematical function that is defined by a set of points
+    /// A function curve is a mathematical function that is defined by a set of points. The function curves are always aligned on the z axis.
 
     class CpvFunctionCurve3
     {
@@ -23,92 +23,73 @@ namespace cpv
         /**
          * @brief Construct a new Cpv Function Curve 3 object
          *
-         * @param points
+         * @param curveFunctions the curve functions to use (must be sorted by x value)
+         * @param zAxisForEachCurve the z axis value for each curve function in the curveFunctions vector
          */
-        CpvFunctionCurve3(std::vector<CpvVector3> points) : points(points) {}
-
-        /**
-         * @brief Get the Number Of Points object
-         *
-         * @return * Returns
-         */
-        int getNumberOfPoints() const
+        CpvFunctionCurve3(std::vector<CpvFunctionCurve2> curveFunctions, std::vector<double> zAxisForEachCurve) : curveFunctions(curveFunctions), zAxisForEachCurve(zAxisForEachCurve)
         {
-            return points.size();
-        }
-
-        /**
-         * @brief Get the Point object
-         *
-         * @param index
-         * @return CpvVector3
-         */
-        CpvVector3 getPoint(int index) const
-        {
-            return points[index];
-        }
-
-        /**
-         * @brief Add a point to the function curve
-         * @details Adds a point of type CpvVector3 to the function 
-         * 
-         * @param point
-         */
-        void addPoint(CpvVector3 point)
-        {
-            points.push_back(point);
-        }
-
-        /**
-         * @brief Add a point to the function curve
-         * @details Adds a point to the function curve with the specified x, y, and z values
-         * 
-         * @param x 
-         * @param y 
-         * @param z 
-         */
-        void addPoint(double x, double y, double z)
-        {
-            points.push_back(CpvVector3(x, y, z));
-        }
-
-        /**
-         * @brief Remove a point from the function curve
-         * 
-         * @param index 
-         */
-        void removePoint(int index)
-        {
-            points.erase(points.begin() + index);
-        }
-
-        /**
-         * @brief Get the Y Value object
-         * @details Gets the y value of the function curve at the specified x and z values
-         * 
-         * @param x 
-         * @param z 
-         * @return double 
-         */
-        double getYValue(double x, double z) const
-        {
-            // find the two points that the x value is between
-            int xIndex = 0;
-            while (xIndex < points.size() && points[xIndex].getX() < x)
+            // Check that the curve functions and z axis values are the same size
+            if (curveFunctions.size() != zAxisForEachCurve.size())
             {
-                xIndex++;
+                throw "The curve functions and z axis values must be the same size";
             }
+        }
 
-            // find the two points that the z value is between
-            int yIndex = 0;
-            while (yIndex < points.size() && points[yIndex].getZ() < z)
-            {
-                yIndex++;
-            }
+        /**
+         * @brief Add a curve function to the curve on the specified z axis value
+         *
+         * @param curveFunction the curve function to add
+         * @param zAxis the z axis value for the curve function
+         */
+        void addCurveFunction(CpvFunctionCurve2 curveFunction, double zAxis)
+        {
+            // Find the index to insert the curve function at
+            auto index = std::lower_bound(zAxisForEachCurve.begin(), zAxisForEachCurve.end(), zAxis);
+
+            // Insert the curve function at the index
+            curveFunctions.insert(curveFunctions.begin() + (index - zAxisForEachCurve.begin()), curveFunction);
+            zAxisForEachCurve.insert(index, zAxis);
+        }
+
+        /**
+         * @brief Add a point to the curve function on the specified z axis value
+         *
+         * @param point the point to add
+         * @param zAxis the z axis value for the curve function
+         */
+        void addPoint(CpvVector2 point, double zAxis)
+        {
+            // Find the index to insert the curve function at
+            auto index = std::lower_bound(zAxisForEachCurve.begin(), zAxisForEachCurve.end(), zAxis);
+
+            // Insert the point at the index
+            curveFunctions[index - zAxisForEachCurve.begin()].addPoint(point);
+        }
+
+        /**
+         * @brief Add a point to the curve function on the specified z axis value at the x and y values
+         *
+         * @param x the x value of the point to add
+         * @param y the y value of the point to add
+         * @param zAxis the z axis value for the curve function
+         */
+        void addPoint(double x, double y, double zAxis)
+        {
+            addPoint(CpvVector2(x, y), zAxis);
+        }
+
+        /**
+         * @brief Clear the curve functions and z axis values
+         */
+        void clear()
+        {
+            curveFunctions.clear();
+            zAxisForEachCurve.clear();
         }
 
     private:
-        std::vector<CpvVector3> points;
+        std::vector<CpvFunctionCurve2> curveFunctions;
+        std::vector<double> zAxisForEachCurve;
     };
 }
 

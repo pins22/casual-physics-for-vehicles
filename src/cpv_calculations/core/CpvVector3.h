@@ -1,3 +1,6 @@
+#ifndef CPV_VECTOR3_H
+#define CPV_VECTOR3_H
+
 #include <cmath>
 
 using namespace std;
@@ -66,3 +69,5 @@ namespace cpv
         double z;
     };
 }
+
+#endif

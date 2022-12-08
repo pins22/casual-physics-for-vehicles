@@ -78,6 +78,30 @@ namespace cpv
             return CpvVector3(x * scalar, y * scalar, z * scalar);
         }
 
+        /**
+         * @brief Compare two vectors for equality
+         * 
+         * @param other the vector to compare to this vector
+         * @return true if the vectors are equal
+         * @return false if the vectors are not equal
+         */
+        bool operator==(const CpvVector3 &other) const
+        {
+            return x == other.x && y == other.y && z == other.z;
+        }
+
+        /**
+         * @brief Compare two vectors for inequality
+         * 
+         * @param other the vector to compare to this vector
+         * @return true if the vectors are not equal
+         * @return false if the vectors are equal
+         */
+        bool operator!=(const CpvVector3 &other) const
+        {
+            return !(*this == other);
+        }
+
     private:
         double x;
         double y;

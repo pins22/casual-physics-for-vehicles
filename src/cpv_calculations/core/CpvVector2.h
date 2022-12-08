@@ -71,6 +71,41 @@ namespace cpv
         {
             return CpvVector2(x * scalar, y * scalar);
         }
+        
+        /**
+         * @brief Divide vector by a scalar and return resulting vector
+         * 
+         * @param other 
+         * @return true 
+         * @return bool 
+         */
+        bool operator==(const CpvVector2 &other) const
+        {
+            return x == other.x && y == other.y;
+        }
+
+        /**
+         * @brief Compare two vectors and return true if they are not equal
+         * 
+         * @param other 
+         * @return true 
+         * @return bool 
+         */
+        bool operator!=(const CpvVector2 &other) const
+        {
+            return !(*this == other);
+        }
+
+        /**
+         * @brief Compare two vectors and return true if this vector is less than the other vector
+         * 
+         * @param other
+         * @return bool
+         */
+        bool operator<(const CpvVector2 &other) const
+        {
+            return x < other.x;
+        }
 
     private:
         double x;

@@ -1,12 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
-# Not ideal to use this global variable, but necessary to make sure
-# that tooling and projects use the same version
 set(CMAKE_CXX_STANDARD 17)
 
-# strongly encouraged to enable this globally to avoid conflicts between
-# -Wpedantic being enabled and -std=c++20 and -std=gnu++20 for example
-# when compiling with PCH enabled
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 project(
@@ -17,4 +12,16 @@ project(
   LANGUAGES CXX C)
 
 
-  add_subdirectory(core)
+add_subdirectory(core)
+
+# GoogleTest requires at least C++14
+set(CMAKE_CXX_STANDARD 14)
+
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+)
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)

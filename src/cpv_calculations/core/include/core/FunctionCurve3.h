@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <stdlib.h>
-#include "CpvFunctionCurve2.h"
+#include "FunctionCurve2.h"
 
 namespace cpv
 {

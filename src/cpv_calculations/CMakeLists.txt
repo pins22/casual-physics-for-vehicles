@@ -13,9 +13,8 @@ project(
 
 
 add_subdirectory(core)
-
-# GoogleTest requires at least C++14
-set(CMAKE_CXX_STANDARD 14)
+add_subdirectory(physics)
+add_subdirectory(terrain)
 
 include(FetchContent)
 FetchContent_Declare(

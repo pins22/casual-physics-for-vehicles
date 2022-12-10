@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <stdlib.h>
-#include "CpvVector2.h"
+#include "Vector2.h"
 
 namespace cpv
 {

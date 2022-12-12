@@ -11,6 +11,7 @@ project(
   HOMEPAGE_URL "%%url%%"
   LANGUAGES CXX C)
 
+enable_testing()
 
 add_subdirectory(core)
 add_subdirectory(physics)

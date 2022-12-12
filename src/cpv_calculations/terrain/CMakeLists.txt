@@ -5,5 +5,6 @@ add_library(terrain STATIC
 target_include_directories(terrain PRIVATE include)
 
 if (ENABLE_TESTS)
+    enable_testing()
     add_subdirectory(test)
 endif()

@@ -1,6 +1,3 @@
-#ifndef CPV_FUNCTION_CURVE2_H
-#define CPV_FUNCTION_CURVE2_H
-
 #include <vector>
 #include <stdlib.h>
 #include "Vector2.h"
@@ -22,7 +19,7 @@ namespace cpv
          * @param points the vector of points to use (must be sorted by x value)
          *
          */
-        CpvFunctionCurve2(std::vector<CpvVector2> points) : points(points) {}
+        CpvFunctionCurve2(std::vector<CpvVector2>&& points) : points(points) {}
 
         /**
          * @brief Returns the number of points in the function curve
@@ -116,7 +113,7 @@ namespace cpv
             if (x > points[points.size() - 1].getX())
                 throw "The x value is greater than the last point in the function curve";
 
-            auto index = std::lower_bound(points.begin(), points.end(), CpvVector2(x, 0));
+            const auto index = std::lower_bound(points.begin(), points.end(), CpvVector2(x, 0));
 
             // If the x value is equal to a point, return the y value of the point
             if (x == index->getX())
@@ -124,8 +121,8 @@ namespace cpv
 
             // Get the x and y values of the two points that the x value is between
 
-            double y1 = index->getY();
-            double y2 = (index - 1)->getY();
+            const double y1 = index->getY();
+            const double y2 = (index - 1)->getY();
 
             return std::abs(y2 - y1) / 2;
         }
@@ -158,7 +155,7 @@ namespace cpv
             if (x > points[points.size() - 1].getX())
                 throw "The x value is greater than the last point in the function curve";
 
-            auto index = std::lower_bound(points.begin(), points.end(), CpvVector2(x, 0));
+            const auto index = std::lower_bound(points.begin(), points.end(), CpvVector2(x, 0));
 
             // If the x value is equal to a point, return the y value of the point
             if (x == index->getX())
@@ -166,8 +163,8 @@ namespace cpv
 
             // Get the x and y values of the two points that the x value is between
 
-            double y1 = index->getY();
-            double y2 = (index - 1)->getY();
+            const double y1 = index->getY();
+            const double y2 = (index - 1)->getY();
 
             return std::abs(y2 - y1) / 2;
         }
@@ -176,5 +173,3 @@ namespace cpv
         std::vector<CpvVector2> points;
     };
 }
-
-#endif

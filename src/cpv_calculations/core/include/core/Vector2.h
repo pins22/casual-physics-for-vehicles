@@ -1,6 +1,4 @@
-#ifndef CPV_VECTOR2_H
-#define CPV_VECTOR2_H
-
+#pragma once
 #include <cmath>
 
 using namespace std;
@@ -112,5 +110,3 @@ namespace cpv
         double y;
     };
 }
-
-#endif

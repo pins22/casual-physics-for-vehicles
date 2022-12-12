@@ -1,6 +1,3 @@
-#ifndef CPV_FUNCTION_CURVE3_H
-#define CPV_FUNCTION_CURVE3_H
-
 #include <vector>
 #include <stdlib.h>
 #include "FunctionCurve2.h"
@@ -140,5 +137,3 @@ namespace cpv
         std::vector<double> zAxisForEachCurve;
     };
 }
-
-#endif

@@ -100,6 +100,7 @@ namespace cpv
         {
             return !(*this == other);
         }
+        
 
     private:
         double x;

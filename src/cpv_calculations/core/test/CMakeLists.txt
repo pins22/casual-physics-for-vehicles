@@ -7,10 +7,13 @@ add_executable(
     Vector2Test.cpp
     Vector3Test.cpp
 )
+
 target_link_libraries(
   core_test
   GTest::gtest_main
 )
+
+target_include_directories(core_test PRIVATE ../include)
 
 include(GoogleTest)
 gtest_discover_tests(core_test)

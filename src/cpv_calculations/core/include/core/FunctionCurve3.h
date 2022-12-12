@@ -9,13 +9,13 @@ namespace cpv
     /// @details
     /// A function curve is a mathematical function that is defined by a set of points. The function curves are always aligned on the z axis.
 
-    class CpvFunctionCurve3
+    class FunctionCurve3
     {
     public:
         /**
          * @brief Construct a new Cpv Function Curve 3 object
          */
-        CpvFunctionCurve3() {}
+        FunctionCurve3() {}
 
         /**
          * @brief Construct a new Cpv Function Curve 3 object
@@ -23,7 +23,7 @@ namespace cpv
          * @param curveFunctions the curve functions to use (must be sorted by x value)
          * @param zAxisForEachCurve the z axis value for each curve function in the curveFunctions vector
          */
-        CpvFunctionCurve3(std::vector<CpvFunctionCurve2> curveFunctions, std::vector<double> zAxisForEachCurve) : curveFunctions(curveFunctions), zAxisForEachCurve(zAxisForEachCurve)
+        FunctionCurve3(std::vector<FunctionCurve2> curveFunctions, std::vector<double> zAxisForEachCurve) : curveFunctions(curveFunctions), zAxisForEachCurve(zAxisForEachCurve)
         {
             // Check that the curve functions and z axis values are the same size
             if (curveFunctions.size() != zAxisForEachCurve.size())
@@ -38,7 +38,7 @@ namespace cpv
          * @param curveFunction the curve function to add
          * @param zAxis the z axis value for the curve function
          */
-        void addCurveFunction(CpvFunctionCurve2 curveFunction, double zAxis)
+        void addCurveFunction(FunctionCurve2 curveFunction, double zAxis)
         {
             // Find the index to insert the curve function at
             auto index = std::lower_bound(zAxisForEachCurve.begin(), zAxisForEachCurve.end(), zAxis);
@@ -54,7 +54,7 @@ namespace cpv
          * @param point the point to add
          * @param zAxis the z axis value for the curve function
          */
-        void addPoint(CpvVector2 point, double zAxis)
+        void addPoint(Vector2 point, double zAxis)
         {
             // Find the index to insert the curve function at
             auto index = std::lower_bound(zAxisForEachCurve.begin(), zAxisForEachCurve.end(), zAxis);
@@ -72,7 +72,7 @@ namespace cpv
          */
         void addPoint(double x, double y, double zAxis)
         {
-            addPoint(CpvVector2(x, y), zAxis);
+            addPoint(Vector2(x, y), zAxis);
         }
 
         /**
@@ -89,8 +89,8 @@ namespace cpv
 
             // Get the curve function to use
             // - zAxosForEachCurve.begin() is used to get the index of the curve function, not the address
-            CpvFunctionCurve2 curveFunction1 = curveFunctions[ptr - zAxisForEachCurve.begin()];
-            CpvFunctionCurve2 curveFunction2 = curveFunctions[ptr - zAxisForEachCurve.begin() + 1];
+            FunctionCurve2 curveFunction1 = curveFunctions[ptr - zAxisForEachCurve.begin()];
+            FunctionCurve2 curveFunction2 = curveFunctions[ptr - zAxisForEachCurve.begin() + 1];
 
             // Get the y values for the x value
             double y1 = curveFunction1.getYValue(x);
@@ -113,8 +113,8 @@ namespace cpv
 
             // Get the curve function to use
             // - zAxosForEachCurve.begin() is used to get the index of the curve function, not the address
-            CpvFunctionCurve2 curveFunction1 = curveFunctions[ptr - zAxisForEachCurve.begin()];
-            CpvFunctionCurve2 curveFunction2 = curveFunctions[ptr - zAxisForEachCurve.begin() + 1];
+            FunctionCurve2 curveFunction1 = curveFunctions[ptr - zAxisForEachCurve.begin()];
+            FunctionCurve2 curveFunction2 = curveFunctions[ptr - zAxisForEachCurve.begin() + 1];
 
             // Get the y values for the x value
             double y1 = curveFunction1.getYValue(x);
@@ -133,7 +133,7 @@ namespace cpv
         }
 
     private:
-        std::vector<CpvFunctionCurve2> curveFunctions;
+        std::vector<FunctionCurve2> curveFunctions;
         std::vector<double> zAxisForEachCurve;
     };
 }

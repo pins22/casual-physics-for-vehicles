@@ -4,14 +4,14 @@
 
 namespace cpv
 {
-    class CpvFunctionCurve2
+    class FunctionCurve2
     {
     public:
         /**
          * @brief Default constructor
          * Creates an empty function curve
          */
-        CpvFunctionCurve2() {}
+        FunctionCurve2() {}
 
         /**
          * @brief Constructor with a vector of points
@@ -19,7 +19,7 @@ namespace cpv
          * @param points the vector of points to use (must be sorted by x value)
          *
          */
-        CpvFunctionCurve2(std::vector<CpvVector2>&& points) : points(points) {}
+        FunctionCurve2(std::vector<Vector2>&& points) : points(points) {}
 
         /**
          * @brief Returns the number of points in the function curve
@@ -37,7 +37,7 @@ namespace cpv
          * @param index the index of the point to return
          * @return CpvVector2 the point at the specified index
          */
-        CpvVector2 getPoint(int index) const
+        Vector2 getPoint(int index) const
         {
             return points[index];
         }
@@ -47,7 +47,7 @@ namespace cpv
          *
          * @param point the point to add
          */
-        void addPoint(CpvVector2 point)
+        void addPoint(Vector2 point)
         {
             // Find the index to insert the point at
             auto index = std::lower_bound(points.begin(), points.end(), point);
@@ -64,7 +64,7 @@ namespace cpv
          */
         void addPoint(double x, double y)
         {
-            addPoint(CpvVector2(x, y));
+            addPoint(Vector2(x, y));
         }
 
         /**
@@ -113,7 +113,7 @@ namespace cpv
             if (x > points[points.size() - 1].getX())
                 throw "The x value is greater than the last point in the function curve";
 
-            const auto index = std::lower_bound(points.begin(), points.end(), CpvVector2(x, 0));
+            const auto index = std::lower_bound(points.begin(), points.end(), Vector2(x, 0));
 
             // If the x value is equal to a point, return the y value of the point
             if (x == index->getX())
@@ -155,7 +155,7 @@ namespace cpv
             if (x > points[points.size() - 1].getX())
                 throw "The x value is greater than the last point in the function curve";
 
-            const auto index = std::lower_bound(points.begin(), points.end(), CpvVector2(x, 0));
+            const auto index = std::lower_bound(points.begin(), points.end(), Vector2(x, 0));
 
             // If the x value is equal to a point, return the y value of the point
             if (x == index->getX())
@@ -170,6 +170,6 @@ namespace cpv
         }
 
     private:
-        std::vector<CpvVector2> points;
+        std::vector<Vector2> points;
     };
 }

@@ -6,14 +6,14 @@ using namespace std;
 
 namespace cpv
 {
-    class CpvVector3
+    class Vector3
     {
     public:
         /**
          * @brief Default constructor
          * @details Creates vector of (0, 0, 0)
          */
-        CpvVector3() : x(0), y(0), z(0) {}
+        Vector3() : x(0), y(0), z(0) {}
 
         /**
          * @brief Constructor with x, y and z components of the vector
@@ -22,7 +22,7 @@ namespace cpv
          * @param y the y component of the vector
          * @param z the z component of the vector
          */
-        CpvVector3(double x, double y, double z) : x(x), y(y), z(z) {}
+        Vector3(double x, double y, double z) : x(x), y(y), z(z) {}
 
         // getters
         double getX() const { return x; }
@@ -50,9 +50,9 @@ namespace cpv
          * @param other the vector to add to this vector
          * @return CpvVector3 the resulting vector
          */
-        CpvVector3 operator+(const CpvVector3 &other) const
+        Vector3 operator+(const Vector3 &other) const
         {
-            return CpvVector3(x + other.x, y + other.y, z + other.z);
+            return Vector3(x + other.x, y + other.y, z + other.z);
         }
 
         /**
@@ -61,9 +61,9 @@ namespace cpv
          * @param other the vector to subtract from this vector
          * @return CpvVector3 the resulting vector
          */
-        CpvVector3 operator-(const CpvVector3 &other) const
+        Vector3 operator-(const Vector3 &other) const
         {
-            return CpvVector3(x - other.x, y - other.y, z - other.z);
+            return Vector3(x - other.x, y - other.y, z - other.z);
         }
 
         /**
@@ -72,9 +72,9 @@ namespace cpv
          * @param scalar the scalar to multiply the vector by
          * @return CpvVector3 the resulting vector
          */
-        CpvVector3 operator*(double scalar) const
+        Vector3 operator*(double scalar) const
         {
-            return CpvVector3(x * scalar, y * scalar, z * scalar);
+            return Vector3(x * scalar, y * scalar, z * scalar);
         }
 
         /**
@@ -84,7 +84,7 @@ namespace cpv
          * @return true if the vectors are equal
          * @return false if the vectors are not equal
          */
-        bool operator==(const CpvVector3 &other) const
+        bool operator==(const Vector3 &other) const
         {
             return x == other.x && y == other.y && z == other.z;
         }
@@ -96,7 +96,7 @@ namespace cpv
          * @return true if the vectors are not equal
          * @return false if the vectors are equal
          */
-        bool operator!=(const CpvVector3 &other) const
+        bool operator!=(const Vector3 &other) const
         {
             return !(*this == other);
         }

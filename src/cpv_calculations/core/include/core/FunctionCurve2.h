@@ -8,12 +8,6 @@ namespace cpv
     {
     public:
         /**
-         * @brief Default constructor
-         * Creates an empty function curve
-         */
-        FunctionCurve2() {}
-
-        /**
          * @brief Constructor with a vector of points
          *
          * @param points the vector of points to use (must be sorted by x value)

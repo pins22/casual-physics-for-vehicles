@@ -1,21 +1,21 @@
 #ifndef CPV_ENGINE_H
 #define CPV_ENGINE_h
 
-#include "cpv_calculations/core/CpvFunctionCurve3.h"
+#include "core/FunctionCurve3.h"
 
 namespace cpv
 {
     namespace vehicle
     {
 
-        class CpvEngine
+        class Engine
         {
         public:
             /**
              * @brief Default constructor for the CpvEngine class
              * @details Sets all values to 0
              */
-            CpvEngine();
+            Engine();
 
             /**
              * @brief Basic constructor for the CpvEngine class
@@ -25,7 +25,7 @@ namespace cpv
              * @param powerCurve the power curve of the engine
              * @param idleRpm the idle rpm of the engine
              */
-            CpvEngine(CpvFunctionCurve3 torqueCurve, int idleRpm);
+            Engine(FunctionCurve3 torqueCurve, int idleRpm);
 
             /**
              * @brief Assignment operator for the CpvEngine class
@@ -33,7 +33,7 @@ namespace cpv
              * @param other the CpvEngine to copy
              * @return a reference to the CpvEngine
              */
-            CpvEngine &operator=(const CpvEngine &other);
+            Engine &operator=(const Engine &other);
 
             /**
              * @brief Calculate the torque[N*m] at the current rpm and throttle
@@ -56,20 +56,20 @@ namespace cpv
              */
 
             // getters
-            CpvFunctionCurve3 getTorqueCurve();
+            FunctionCurve3 getTorqueCurve();
             int getIdleRpm();
             int getRpm();
             double getThrottle();
 
             // setters
-            void setTorqueCurve(CpvFunctionCurve3 torqueCurve);
+            void setTorqueCurve(FunctionCurve3 torqueCurve);
             void setIdleRpm(int idleRpm);
             void setRpm(int rpm);
             void setThrottle(double throttle);
 
         private:
             // engine constants
-            CpvFunctionCurve3 torqueCurve; // torque curve is a function that returns the torque[Watt] at a given rpm
+            FunctionCurve3 torqueCurve; // torque curve is a function that returns the torque[Watt] at a given rpm
             int idleRpm;                   // idleRpm is the rpm at which the engine is idling
 
             // engine variables

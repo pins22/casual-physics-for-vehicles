@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 project(
-  calc_lib
+  CalcLib 
   VERSION 0.0.1
   DESCRIPTION ""
   HOMEPAGE_URL "%%url%%"
@@ -16,6 +16,7 @@ enable_testing()
 add_subdirectory(core)
 add_subdirectory(physics)
 add_subdirectory(terrain)
+# add_subdirectory(vehicle)
 
 include(FetchContent)
 FetchContent_Declare(

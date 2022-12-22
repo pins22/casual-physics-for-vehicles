@@ -1,12 +1,12 @@
-#include "cpv_calculations/vehicle/powertrain/CpvEngine.h"
-#include "cpv_calculations/core/CpvFunctionCurve3.h"
+#include "vehicle/powertrain/Engine.h"
+#include "core/FunctionCurve3.h"
 
 namespace cpv
 {
     namespace vehicle
     {
         // engine constants
-        CpvFunctionCurve3 torqueCurve; // torque curve is a function that returns the torque[Watt] at a given rpm
+        FunctionCurve3 torqueCurve; // torque curve is a function that returns the torque[Watt] at a given rpm
         int idleRpm;                   // idleRpm is the rpm at which the engine is idling
 
         // engine variables
@@ -15,9 +15,9 @@ namespace cpv
 
         // Default constructor for the CpvEngine class
         // Sets all values to 0
-        CpvEngine::CpvEngine()
+        Engine::Engine()
         {
-            torqueCurve = CpvFunctionCurve3();
+            torqueCurve = FunctionCurve3();
             idleRpm = 0.0;
             rpm = 0.0;
             throttle = 0.0;
@@ -25,7 +25,7 @@ namespace cpv
 
         // Basic constructor for the CpvEngine class
         // Sets all values to the given values
-        CpvEngine::CpvEngine(CpvFunctionCurve3 torqueCurve, int idleRpm)
+        Engine::Engine(CpvFunctionCurve3 torqueCurve, int idleRpm)
         {
             this->torqueCurve = torqueCurve;
             this->idleRpm = idleRpm;
@@ -34,7 +34,7 @@ namespace cpv
         }
 
         // Assignment operator for the CpvEngine class
-        CpvEngine &CpvEngine::operator=(const CpvEngine &other)
+        Engine &CpvEngine::operator=(const Engine &other)
         {
             if (this != &other)
             {
@@ -47,55 +47,55 @@ namespace cpv
         }
 
         // Calculate the torque [N*m] at the current rpm and throttle
-        double CpvEngine::calculateTorque()
+        double Engine::calculateTorque()
         {
             return torqueCurve.getYValue(1.0 * rpm, throttle);
         }
 
         // Calculate the power [Watt] at the current rpm and throttle
-        double CpvEngine::calculatePower()
+        double Engine::calculatePower()
         {
             return torqueCurve.getYValue(1.0 * rpm, throttle) * rpm / 9549.0;
         }
 
         // getters
-        CpvFunctionCurve3 CpvEngine::getTorqueCurve()
+        FunctionCurve3 Engine::getTorqueCurve()
         {
             return torqueCurve;
         }
 
-        int CpvEngine::getIdleRpm()
+        int Engine::getIdleRpm()
         {
             return idleRpm;
         }
 
-        int CpvEngine::getRpm()
+        int Engine::getRpm()
         {
             return rpm;
         }
 
-        double CpvEngine::getThrottle()
+        double Engine::getThrottle()
         {
             return throttle;
         }
 
         // setters
-        void CpvEngine::setTorqueCurve(CpvFunctionCurve3 torqueCurve)
+        void Engine::setTorqueCurve(FunctionCurve3 torqueCurve)
         {
             this->torqueCurve = torqueCurve;
         }
 
-        void CpvEngine::setIdleRpm(int idleRpm)
+        void Engine::setIdleRpm(int idleRpm)
         {
             this->idleRpm = idleRpm;
         }
 
-        void CpvEngine::setRpm(int rpm)
+        void Engine::setRpm(int rpm)
         {
             this->rpm = rpm;
         }
 
-        void CpvEngine::setThrottle(double throttle)
+        void Engine::setThrottle(double throttle)
         {
             this->throttle = throttle;
         }

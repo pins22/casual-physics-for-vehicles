@@ -14,7 +14,15 @@ Welcome to Casual Physics For Vehicles's documentation!
 
 Indices and tables
 ==================
-
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+
+.. TODO: Actually configure this
+.. doxygenindex::
+.. doxygenfunction::
+.. doxygenstruct::
+.. doxygenenum::
+.. doxygentypedef::
+.. doxygenclass::

@@ -27,9 +27,9 @@ author = 'Mark Loboda, Andrej Sušnik, Jurij Medic, Filip Jeretina'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.pngmath', 'sphinx.ext.todo', 'breathe' ]
+extensions = ['sphinx.ext.imgmath', 'sphinx.ext.todo', 'breathe' ]
 
-breathe_projects = {"cpv": "../doxygen/Doxyfile.xml"}
+breathe_projects = {"cpv": "../doxygen/xml/"}
 breathe_default_project = "cpv"
 
 # Add any paths that contain templates here, relative to this directory.

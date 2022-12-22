@@ -29,6 +29,9 @@ author = 'Mark Loboda, Andrej Sušnik, Jurij Medic, Filip Jeretina'
 # ones.
 extensions = ['sphinx.ext.pngmath', 'sphinx.ext.todo', 'breathe' ]
 
+breathe_projects = {"cpv": "../doxygen/Doxyfile.xml"}
+breathe_default_project = "cpv"
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 

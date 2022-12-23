@@ -11,9 +11,9 @@ namespace cpv
         namespace movement
         {
             // vehicle specific constants
-            double mass;                   // mass is the total mass of the vehicle
+            double mass;                   // mass is the total mass of the vehicle [kg]
             double dragConst;              // dragConst is the drag coefficient of the vehicle
-            double rollingResistanceConst; // rollingResistanceConst is the rolling resistance coefficient of the vehicle
+            double rollingResistanceConst; // rollingResistanceConst is the rolling resistance coefficient of the vehicle (tires)
             Brake brake;                    // brake is the brake class of the vehicle
 
             // Default constructor for the CpvLongitudinalForceModel class

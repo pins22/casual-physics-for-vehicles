@@ -22,9 +22,9 @@ namespace cpv
              * @brief Basic constructor for the Brake class
              * @details Sets all values to the given values
              *
-             * @param brakeConst the brake constant of the vehicle
+             * @param maxBrakeTorque the brake constant of the vehicle
              */
-            Brake(double brakeConst);
+            Brake(double maxBrakeTorque);
 
             /**
              * @brief Get the brake force[N]
@@ -37,7 +37,7 @@ namespace cpv
 
         private:
             // vehicle specific constants
-            double brakeConst; // brakeConst is the brake constant of the vehicle
+            double maxBrakeTorque; // maxBrakeTorque is the brake constant of the vehicle
         };
     }
 }

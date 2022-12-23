@@ -22,10 +22,10 @@ namespace cpv
              * @details Sets all values to the given values
              *
              * @param torqueCurve the torque curve of the engine
-             * @param powerCurve the power curve of the engine
              * @param idleRpm the idle rpm of the engine
+             * @param maxRpm the max rpm of the engine
              */
-            Engine(FunctionCurve3 torqueCurve, int idleRpm);
+            Engine(FunctionCurve3 torqueCurve, int idleRpm, int maxRpm);
 
             /**
              * @brief Assignment operator for the CpvEngine class
@@ -58,12 +58,14 @@ namespace cpv
             // getters
             FunctionCurve3 getTorqueCurve();
             int getIdleRpm();
+            int getMaxRpm();
             int getRpm();
             double getThrottle();
 
             // setters
             void setTorqueCurve(FunctionCurve3 torqueCurve);
             void setIdleRpm(int idleRpm);
+            void setMaxRpm(int maxRpm);
             void setRpm(int rpm);
             void setThrottle(double throttle);
 
@@ -71,6 +73,7 @@ namespace cpv
             // engine constants
             FunctionCurve3 torqueCurve; // torque curve is a function that returns the torque[Watt] at a given rpm
             int idleRpm;                // idleRpm is the rpm at which the engine is idling
+            int maxRpm;                 // maxRpm is the maximum rpm of the engine
 
             // engine variables
             int rpm;         // rpm is the current engine speed

@@ -7,7 +7,8 @@ namespace cpv
     {
         // engine constants
         FunctionCurve3 torqueCurve; // torque curve is a function that returns the torque[Watt] at a given rpm
-        int idleRpm;                   // idleRpm is the rpm at which the engine is idling
+        int idleRpm;                // idleRpm is the rpm at which the engine is idling
+        int maxRpm;                 // maxRpm is the maximum rpm of the engine
 
         // engine variables
         int rpm;         // rpm is the current engine speed
@@ -18,17 +19,19 @@ namespace cpv
         Engine::Engine()
         {
             torqueCurve = FunctionCurve3();
-            idleRpm = 0.0;
-            rpm = 0.0;
+            idleRpm = 0;
+            maxRpm = 0;
+            rpm = 0;
             throttle = 0.0;
         }
 
         // Basic constructor for the CpvEngine class
         // Sets all values to the given values
-        Engine::Engine(FunctionCurve3 torqueCurve, int idleRpm)
+        Engine::Engine(FunctionCurve3 torqueCurve, int idleRpm, int maxRpm)
         {
             this->torqueCurve = torqueCurve;
             this->idleRpm = idleRpm;
+            this->maxRpm = maxRpm;
             this->rpm = 0.0;
             this->throttle = 0.0;
         }
@@ -69,6 +72,11 @@ namespace cpv
             return idleRpm;
         }
 
+        int Engine::getMaxRpm()
+        {
+            return maxRpm;
+        }
+
         int Engine::getRpm()
         {
             return rpm;
@@ -88,6 +96,11 @@ namespace cpv
         void Engine::setIdleRpm(int idleRpm)
         {
             this->idleRpm = idleRpm;
+        }
+
+        void Engine::setMaxRpm(int maxRpm)
+        {
+            this->maxRpm = maxRpm;
         }
 
         void Engine::setRpm(int rpm)

@@ -1,0 +1,23 @@
+{
+    "mass": 1300,
+    "vehicleEngine": {
+        "idleRPM": 800,
+        "maxRPM": 8000,
+        "torqueCurve": {
+            "800": 220,
+            "1000": 220,
+            "4000": 320,
+            "8000": 220
+        }
+    },
+    "brakes": {
+        "type": "simple",
+        "frontBrake": {
+            "maxBrakeTorque": 1000
+        }
+    },
+    "resistance": {
+        "dragCoefficient": 0.5,
+        "rollingResistanceCoefficient": 0.01
+    }
+}

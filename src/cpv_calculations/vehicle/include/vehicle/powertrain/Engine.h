@@ -1,7 +1,7 @@
+#include "core/FunctionCurve3.h"
+
 #ifndef CPV_ENGINE_H
 #define CPV_ENGINE_h
-
-#include "core/FunctionCurve3.h"
 
 namespace cpv
 {
@@ -70,7 +70,7 @@ namespace cpv
         private:
             // engine constants
             FunctionCurve3 torqueCurve; // torque curve is a function that returns the torque[Watt] at a given rpm
-            int idleRpm;                   // idleRpm is the rpm at which the engine is idling
+            int idleRpm;                // idleRpm is the rpm at which the engine is idling
 
             // engine variables
             int rpm;         // rpm is the current engine speed

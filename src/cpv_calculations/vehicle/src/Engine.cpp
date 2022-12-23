@@ -25,7 +25,7 @@ namespace cpv
 
         // Basic constructor for the CpvEngine class
         // Sets all values to the given values
-        Engine::Engine(CpvFunctionCurve3 torqueCurve, int idleRpm)
+        Engine::Engine(FunctionCurve3 torqueCurve, int idleRpm)
         {
             this->torqueCurve = torqueCurve;
             this->idleRpm = idleRpm;
@@ -34,7 +34,7 @@ namespace cpv
         }
 
         // Assignment operator for the CpvEngine class
-        Engine &CpvEngine::operator=(const Engine &other)
+        Engine &Engine::operator=(const Engine &other)
         {
             if (this != &other)
             {

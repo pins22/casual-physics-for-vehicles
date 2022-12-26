@@ -4,9 +4,6 @@
 #include "core/FunctionCurve3.h"
 
 
-#ifndef CPV_H
-#define CPV_H
-
 namespace cpv
 {
     using namespace vehicle;
@@ -38,5 +35,3 @@ namespace cpv
         LongitudinalForceModel longitudinalForceModel;
     };
 }
-
-#endif

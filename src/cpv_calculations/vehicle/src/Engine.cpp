@@ -32,7 +32,7 @@ namespace cpv
             this->torqueCurve = torqueCurve;
             this->idleRpm = idleRpm;
             this->maxRpm = maxRpm;
-            this->rpm = 0.0;
+            this->rpm = 0;
             this->throttle = 0.0;
         }
 

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 #include "vehicle/movement/LongitudinalForceModel.h"
 #include "vehicle/brake/Brake.h"
 #include "vehicle/powertrain/Engine.h"

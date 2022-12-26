@@ -7,6 +7,7 @@ namespace cpv
     class FunctionCurve2
     {
     public:
+        FunctionCurve2() = default;
         /**
          * @brief Constructor with a vector of points
          *

@@ -24,6 +24,14 @@ namespace cpv
          * @param vehicleParameters the vehicle parameters
          */
 
+        /*
+        * TODO:
+        * initialize vehicle method (json) 
+        * get and setters for vehicle parameters
+        * calculate longitudinal force method  (velocity, slope, breaking amount)
+        * calculate lateral force method 
+        */
+
     private:
         Engine engine;
         Brake brake;

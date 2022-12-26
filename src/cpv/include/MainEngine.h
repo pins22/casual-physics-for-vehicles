@@ -1,11 +1,16 @@
+#pragma once
+
+#include <string>
+
 #include "vehicle/movement/LongitudinalForceModel.h"
 #include "vehicle/brake/Brake.h"
 #include "vehicle/powertrain/Engine.h"
 #include "core/FunctionCurve3.h"
 
+#include "rapidjson/document.h"
+#include "rapidjson/writer.h"
+#include "rapidjson/stringbuffer.h"
 
-#ifndef CPV_H
-#define CPV_H
 
 namespace cpv
 {
@@ -24,11 +29,20 @@ namespace cpv
          * @param vehicleParameters the vehicle parameters
          */
 
+        /*
+        * TODO:
+        * initialize vehicle method (json) 
+        * get and setters for vehicle parameters
+        * calculate longitudinal force method  (velocity, slope, breaking amount)
+        * calculate lateral force method 
+        */
+
+       void initializeVehicle(const std::string& vehicleParametersJson);
+       void initializeVehicle(const char* vehicleParametersJson);
+
     private:
         Engine engine;
         Brake brake;
         LongitudinalForceModel longitudinalForceModel;
     };
 }
-
-#endif

@@ -1,3 +1,3 @@
-inc = include_directories('../include')
+coreinc = include_directories('../include')
 
-corelib = library('core', 'core.cpp')
+corelib = static_library('core', 'core.cpp', include_directories: coreinc)

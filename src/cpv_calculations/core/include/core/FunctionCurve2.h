@@ -1,3 +1,5 @@
+#pragma once
+
 #include <vector>
 #include <stdlib.h>
 #include "Vector2.h"
@@ -7,12 +9,7 @@ namespace cpv
     class FunctionCurve2
     {
     public:
-        /**
-         * @brief Default constructor
-         * Creates an empty function curve
-         */
-        FunctionCurve2() {}
-
+        FunctionCurve2() = default;
         /**
          * @brief Constructor with a vector of points
          *

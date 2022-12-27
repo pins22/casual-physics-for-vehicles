@@ -32,5 +32,9 @@
 *.app
 
 build
+
+doxygen
+_build
+
 **/builddir
 subprojects

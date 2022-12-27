@@ -1,5 +1,7 @@
 {
     "files.associations": {
+        "*.excalidraw": "json",
+        "*.excalidrawlib": "json",
         "array": "cpp",
         "atomic": "cpp",
         "bit": "cpp",
@@ -42,7 +44,8 @@
         "sstream": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "iostream": "cpp"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/src/cpv_calculations"
 }

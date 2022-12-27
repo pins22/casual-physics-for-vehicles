@@ -21,17 +21,7 @@ namespace cpv
             std::cout << "Error parsing JSON" << std::endl;
             return;
         }
-        if (document.HasMember("engine"))
-        {
-            const rapidjson::Value& engine = document["engine"];
-            if (engine.HasMember("maxTorque"))
-            {
-                const rapidjson::Value& maxTorque = engine["maxTorque"];
-                if (maxTorque.IsDouble())
-                {
-                    std::cout << "Max torque: " << maxTorque.GetDouble() << std::endl;
-                }
-            }
-        }
+        
+
     }
 }

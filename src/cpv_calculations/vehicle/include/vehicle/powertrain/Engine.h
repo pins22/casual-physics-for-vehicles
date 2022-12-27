@@ -1,7 +1,5 @@
+#pragma once
 #include "core/FunctionCurve3.h"
-
-#ifndef CPV_ENGINE_H
-#define CPV_ENGINE_h
 
 namespace cpv
 {
@@ -81,5 +79,3 @@ namespace cpv
         };
     }
 }
-
-#endif

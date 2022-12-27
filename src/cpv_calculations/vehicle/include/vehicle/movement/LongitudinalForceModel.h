@@ -1,7 +1,6 @@
-#include "vehicle/brake/Brake.h"
+#pragma once
 
-#ifndef CPV_LONGITUDINAL_FORCE_MODEL_H
-#define CPV_LONGITUDINAL_FORCE_MODEL_H
+#include "vehicle/brake/Brake.h"
 
 namespace cpv
 {
@@ -87,5 +86,3 @@ namespace cpv
         };
     }
 }
-
-#endif

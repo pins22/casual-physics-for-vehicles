@@ -7,7 +7,8 @@
                 "${workspaceFolder}/src/cpv/include",
                 "${workspaceFolder}/src/cpv_calculations/core/include",
                 "${workspaceFolder}/src/cpv_calculations/vehicle/include",
-                "${workspaceFolder}/src/cpv_calculations/vehicle/include"
+                "${workspaceFolder}/src/cpv_calculations/vehicle/include",
+                "${workspaceFolder}/src/cpv/include"
             ],
             "defines": [
                 "_DEBUG",
@@ -23,17 +24,24 @@
         {
             "name": "Ubuntu",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/src/cpv/include",
+                "${workspaceFolder}/src/cpv_calculations/core/include",
+                "${workspaceFolder}/src/cpv_calculations/vehicle/include",
+                "${workspaceFolder}/src/cpv_calculations/vehicle/include",
+                "${workspaceFolder}/src/cpv/include",
+                "/usr/include/c++/10",
+                "/usr/include/x86_64-linux-gnu/c++/10"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
-            "cStandard": "gnu17",
-            "cppStandard": "gnu++14",
-            "intelliSenseMode": "windows-gcc-x86"
+            "compilerPath": "/usr/bin/clang++",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-clang-x64"
         }
     ],
     "version": 4

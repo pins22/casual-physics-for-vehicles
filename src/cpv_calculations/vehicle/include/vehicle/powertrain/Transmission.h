@@ -1,7 +1,5 @@
+#pragma once
 #include <vector>
-
-#ifndef CPV_TRANSMISSION_H
-#define CPV_TRANSMISSION_H
 
 namespace cpv
 {
@@ -77,5 +75,3 @@ namespace cpv
         };
     }
 }
-
-#endif

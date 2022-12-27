@@ -1,5 +1,4 @@
-#ifndef CPV_BRAKE_H
-#define CPV_BRAKE_H
+#pragma once
 
 namespace cpv
 {
@@ -41,5 +40,3 @@ namespace cpv
         };
     }
 }
-
-#endif

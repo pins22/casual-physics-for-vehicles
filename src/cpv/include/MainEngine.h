@@ -12,11 +12,16 @@
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
 
+#ifdef _MSC_VER
+#define DLL_EXPORT __declspec(dllexport)
+#else
+#define DLL_EXPORT
+#endif
 
 namespace cpv
 {
     using namespace vehicle;
-    class MainEngine
+    class DLL_EXPORT MainEngine
     {
     public:
         /**
@@ -49,4 +54,23 @@ namespace cpv
         std::shared_ptr<LongitudinalForceModel> longitudinalForceModel;
 
     };
+}
+
+extern "C" {
+    DLL_EXPORT cpv::MainEngine* MainEngine_new(){
+        return new cpv::MainEngine();
+    }
+
+    DLL_EXPORT void MainEngine_delete(cpv::MainEngine* mainEngine) {
+        delete mainEngine;
+    } 
+
+    DLL_EXPORT void MainEngine_initialize(cpv::MainEngine* mainEngine, const char* vehicleParametersJson){
+        mainEngine->initializeVehicle(vehicleParametersJson);
+    }
+
+    DLL_EXPORT cpv::Engine* MainEngine_getEngine(cpv::MainEngine* mainEngine){
+        return mainEngine->getEngine().get();
+    }
+
 }

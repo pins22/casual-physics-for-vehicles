@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{4698265C-4170-43F9-A7F7-CCB69F43AD0B}|Default">
+  <MonoDevelop.Ide.ItemProperties.Demo PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../MainEngineWrap/MainEngineWrap/MainEngine.cs">
+    <Files>
+      <File FileName="Demo/Program.cs" Line="12" Column="10" />
+      <File FileName="../MainEngineWrap/MainEngineWrap/MainEngine.cs" Line="27" Column="68" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Demo" expanded="True">
+            <Node name="Demo" expanded="True">
+              <Node name="References" expanded="True" />
+            </Node>
+            <Node name="MainEngineWrap" expanded="True">
+              <Node name="MainEngine.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

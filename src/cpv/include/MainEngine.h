@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <memory>
 
 #include "vehicle/movement/LongitudinalForceModel.h"
 #include "vehicle/brake/Brake.h"
@@ -40,9 +41,12 @@ namespace cpv
        void initializeVehicle(const std::string& vehicleParametersJson);
        void initializeVehicle(const char* vehicleParametersJson);
 
+       std::shared_ptr<Engine> getEngine();
+
     private:
-        Engine engine;
-        Brake brake;
-        LongitudinalForceModel longitudinalForceModel;
+        std::shared_ptr<Engine> engine;
+        std::shared_ptr<Brake> brake;
+        std::shared_ptr<LongitudinalForceModel> longitudinalForceModel;
+
     };
 }

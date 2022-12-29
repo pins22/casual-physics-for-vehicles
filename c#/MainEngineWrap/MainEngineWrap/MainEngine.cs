@@ -9,7 +9,7 @@ namespace cpv
         {
             instance = MainEngine_new();
             engineInstance = MainEngine_getEngine(instance);
-            brakeInstance = MainEngine_getBrake(instance);
+            brakeInstance = MainEngine_getBrake(instance);  
             vehicleEngine = new VehicleEngine(engineInstance);
             brake = new Brake(brakeInstance);
         }

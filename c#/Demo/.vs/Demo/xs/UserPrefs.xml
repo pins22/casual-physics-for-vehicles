@@ -1,20 +1,22 @@
 ﻿<Properties StartupConfiguration="{4698265C-4170-43F9-A7F7-CCB69F43AD0B}|Default">
   <MonoDevelop.Ide.ItemProperties.Demo PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Demo/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../MainEngineWrap/MainEngineWrap/Brake.cs">
     <Files>
-      <File FileName="Demo/Program.cs" Line="53" Column="1" />
+      <File FileName="Demo/Program.cs" Line="55" Column="61" />
       <File FileName="../MainEngineWrap/MainEngineWrap/MainEngine.cs" Line="12" Column="63" />
       <File FileName="../../../Projects/MainEngineWrap/MainEngineWrap/MainEngine.cs" Line="12" Column="1" />
       <File FileName="../MainEngineWrap/MainEngineWrap/VehicleEngine.cs" Line="3" Column="1" />
+      <File FileName="../MainEngineWrap/MainEngineWrap/Brake.cs" Line="8" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Demo" expanded="True">
-            <Node name="cpv" expanded="True" />
+            <Node name="cpv" expanded="True">
+              <Node name="Brake.cs" selected="True" />
+            </Node>
             <Node name="Demo" expanded="True">
               <Node name="References" expanded="True" />
-              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -24,9 +26,7 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/home/asusnik/casual-physics-for-vehicles/c#/Demo/Demo/Program.cs" relfile="Demo/Program.cs" line="10" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

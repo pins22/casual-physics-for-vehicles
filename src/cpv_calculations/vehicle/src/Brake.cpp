@@ -24,5 +24,15 @@ namespace cpv
         {
             return maxBrakeTorque * brake;
         }
+
+        void Brake::setMaxBrakeTorque(double maxBrakeTorque)
+        {
+            this->maxBrakeTorque = maxBrakeTorque;
+        }
+
+        double Brake::getMaxBrakeTorque()
+        {
+            return maxBrakeTorque;
+        }
     }
 }

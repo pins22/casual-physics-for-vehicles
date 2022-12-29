@@ -34,6 +34,9 @@ namespace cpv
              */
             double calculateBrakingForce(double brake);
 
+            void setMaxBrakeTorque(double maxBrakeTorque);
+            double getMaxBrakeTorque();
+
         protected:
             // vehicle specific constants
             double maxBrakeTorque; // maxBrakeTorque is the brake constant of the vehicle

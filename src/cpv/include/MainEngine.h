@@ -12,7 +12,6 @@
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
 
-
 namespace cpv
 {
     using namespace vehicle;
@@ -26,22 +25,24 @@ namespace cpv
 
         /**
          * @brief Construct a new Main Engine object
-         * 
+         *
          * @param vehicleParameters the vehicle parameters
          */
 
         /*
-        * TODO:
-        * initialize vehicle method (json) 
-        * get and setters for vehicle parameters
-        * calculate longitudinal force method  (velocity, slope, breaking amount)
-        * calculate lateral force method 
-        */
+         * TODO:
+         * initialize vehicle method (json)
+         * get and setters for vehicle parameters
+         * calculate longitudinal force method  (velocity, slope, breaking amount)
+         * calculate lateral force method
+         */
 
-       void initializeVehicle(const std::string& vehicleParametersJson);
-       void initializeVehicle(const char* vehicleParametersJson);
+        void initializeVehicle(const std::string &vehicleParametersJson);
+        void initializeVehicle(const char *vehicleParametersJson);
 
-       std::shared_ptr<Engine> getEngine();
+        std::shared_ptr<Engine> getEngine();
+        std::shared_ptr<Brake> getBrake();
+        std::shared_ptr<LongitudinalForceModel> getLongitudinalForceModel();
 
     private:
         std::shared_ptr<Engine> engine;

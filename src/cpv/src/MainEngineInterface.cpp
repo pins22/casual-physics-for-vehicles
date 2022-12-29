@@ -30,4 +30,24 @@ extern "C"
 
         return nullptr;
     }
+
+    DLL_EXPORT cpv::Brake *MainEngine_getBrake(cpv::MainEngine *mainEngine)
+    {
+        if (mainEngine)
+        {
+            return mainEngine->getBrake().get();
+        }
+
+        return nullptr;
+    }
+
+    DLL_EXPORT cpv::LongitudinalForceModel *MainEngine_getLongitudinalForceModel(cpv::MainEngine *mainEngine)
+    {
+        if (mainEngine)
+        {
+            return mainEngine->getLongitudinalForceModel().get();
+        }
+
+        return nullptr;
+    }
 }

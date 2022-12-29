@@ -9,7 +9,9 @@ namespace cpv
         {
             instance = MainEngine_new();
             engineInstance = MainEngine_getEngine(instance);
+            brakeInstance = MainEngine_getBrake(instance);
             vehicleEngine = new VehicleEngine(engineInstance);
+            brake = new Brake(brakeInstance);
         }
 
         ~MainEngine()
@@ -24,8 +26,11 @@ namespace cpv
         }
 
         private IntPtr engineInstance;
+        private IntPtr brakeInstance;
+        private IntPtr longitudinalForceModelInstance;
         private IntPtr instance;
         public VehicleEngine vehicleEngine;
+        public Brake brake;
 
         [DllImport("libengine.so")]
         private static extern IntPtr MainEngine_new();
@@ -38,5 +43,11 @@ namespace cpv
 
         [DllImport("libengine.so")]
         private static extern IntPtr MainEngine_getEngine(IntPtr engine);
+
+        [DllImport("libengine.so")]
+        private static extern IntPtr MainEngine_getBrake(IntPtr engine);
+
+        [DllImport("libengine.so")]
+        private static extern IntPtr MainEngine_getLongitudinalForceModel(IntPtr engine);
     }
 }

@@ -75,4 +75,15 @@ namespace cpv
     {
         return engine;
     }
+
+    std::shared_ptr<Brake> MainEngine::getBrake()
+    {
+        return brake;
+    }
+
+    std::shared_ptr<LongitudinalForceModel> MainEngine::getLongitudinalForceModel()
+    {
+        return longitudinalForceModel;
+    }
 }
+

@@ -52,6 +52,7 @@ namespace Demo
             ");
 
             Console.WriteLine(engine.vehicleEngine.maxRpm);
+            Console.WriteLine(engine.vehicleEngine.idleRpm);
         }
     }
 }

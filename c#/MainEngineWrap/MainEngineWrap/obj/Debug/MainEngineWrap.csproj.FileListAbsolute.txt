@@ -4,3 +4,9 @@
 /home/asusnik/Projects/MainEngineWrap/MainEngineWrap/obj/Debug/MainEngineWrap.dll
 /home/asusnik/Projects/MainEngineWrap/MainEngineWrap/obj/Debug/MainEngineWrap.pdb
 /home/asusnik/Projects/MainEngineWrap/MainEngineWrap/obj/Debug/MainEngineWrap.csproj.AssemblyReference.cache
+/home/asusnik/casual-physics-for-vehicles/c#/MainEngineWrap/MainEngineWrap/bin/Debug/MainEngineWrap.dll
+/home/asusnik/casual-physics-for-vehicles/c#/MainEngineWrap/MainEngineWrap/bin/Debug/MainEngineWrap.pdb
+/home/asusnik/casual-physics-for-vehicles/c#/MainEngineWrap/MainEngineWrap/obj/Debug/MainEngineWrap.csproj.AssemblyReference.cache
+/home/asusnik/casual-physics-for-vehicles/c#/MainEngineWrap/MainEngineWrap/obj/Debug/MainEngineWrap.csproj.CoreCompileInputs.cache
+/home/asusnik/casual-physics-for-vehicles/c#/MainEngineWrap/MainEngineWrap/obj/Debug/MainEngineWrap.dll
+/home/asusnik/casual-physics-for-vehicles/c#/MainEngineWrap/MainEngineWrap/obj/Debug/MainEngineWrap.pdb

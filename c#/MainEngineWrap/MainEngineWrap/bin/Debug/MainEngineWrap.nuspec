@@ -18,7 +18,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="/home/asusnik/Projects/MainEngineWrap/MainEngineWrap/bin/Debug/MainEngineWrap.dll" target="lib/portable45-net45+win8+wpa81/MainEngineWrap.dll" />
-    <file src="/home/asusnik/Projects/MainEngineWrap/MainEngineWrap/bin/Debug/MainEngineWrap.pdb" target="lib/portable45-net45+win8+wpa81/MainEngineWrap.pdb" />
+    <file src="/home/asusnik/casual-physics-for-vehicles/c#/MainEngineWrap/MainEngineWrap/bin/Debug/MainEngineWrap.dll" target="lib/portable45-net45+win8+wpa81/MainEngineWrap.dll" />
+    <file src="/home/asusnik/casual-physics-for-vehicles/c#/MainEngineWrap/MainEngineWrap/bin/Debug/MainEngineWrap.pdb" target="lib/portable45-net45+win8+wpa81/MainEngineWrap.pdb" />
   </files>
 </package>

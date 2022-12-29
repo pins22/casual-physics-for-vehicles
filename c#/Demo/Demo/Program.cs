@@ -1,5 +1,5 @@
 ﻿using System;
-using MainEngineWrap;
+using cpv;
 
 namespace Demo
 {
@@ -50,6 +50,8 @@ namespace Demo
   }
 }
             ");
+
+            Console.WriteLine(engine.vehicleEngine.maxRpm);
         }
     }
 }

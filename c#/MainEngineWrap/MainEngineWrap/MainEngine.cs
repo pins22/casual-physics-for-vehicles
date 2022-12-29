@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace MainEngineWrap
+namespace cpv
 {
-
-
     public class MainEngine
     {
         public MainEngine()
         {
             instance = MainEngine_new();
+            engineInstance = MainEngine_getEngine(instance);
+            vehicleEngine = new VehicleEngine(engineInstance);
         }
 
         ~MainEngine()
@@ -23,7 +23,9 @@ namespace MainEngineWrap
             MainEngine_initialize(instance, initJson);
         }
 
+        private IntPtr engineInstance;
         private IntPtr instance;
+        public VehicleEngine vehicleEngine;
 
         [DllImport("libengine.so")]
         private static extern IntPtr MainEngine_new();
@@ -33,5 +35,8 @@ namespace MainEngineWrap
 
         [DllImport("libengine.so")]
         private static extern void MainEngine_initialize(IntPtr engine, String str);
+
+        [DllImport("libengine.so")]
+        private static extern IntPtr MainEngine_getEngine(IntPtr engine);
     }
 }

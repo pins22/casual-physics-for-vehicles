@@ -7,3 +7,12 @@
 /home/asusnik/Projects/Demo/Demo/obj/x86/Debug/Demo.csproj.CopyComplete
 /home/asusnik/Projects/Demo/Demo/obj/x86/Debug/Demo.exe
 /home/asusnik/Projects/Demo/Demo/obj/x86/Debug/Demo.pdb
+/home/asusnik/casual-physics-for-vehicles/c#/Demo/Demo/bin/Debug/Demo.exe
+/home/asusnik/casual-physics-for-vehicles/c#/Demo/Demo/bin/Debug/Demo.pdb
+/home/asusnik/casual-physics-for-vehicles/c#/Demo/Demo/bin/Debug/MainEngineWrap.dll
+/home/asusnik/casual-physics-for-vehicles/c#/Demo/Demo/bin/Debug/MainEngineWrap.pdb
+/home/asusnik/casual-physics-for-vehicles/c#/Demo/Demo/obj/x86/Debug/Demo.csproj.AssemblyReference.cache
+/home/asusnik/casual-physics-for-vehicles/c#/Demo/Demo/obj/x86/Debug/Demo.csproj.CoreCompileInputs.cache
+/home/asusnik/casual-physics-for-vehicles/c#/Demo/Demo/obj/x86/Debug/Demo.csproj.CopyComplete
+/home/asusnik/casual-physics-for-vehicles/c#/Demo/Demo/obj/x86/Debug/Demo.exe
+/home/asusnik/casual-physics-for-vehicles/c#/Demo/Demo/obj/x86/Debug/Demo.pdb

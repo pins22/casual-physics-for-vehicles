@@ -36,9 +36,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MainEngineWrap\MainEngineWrap\MainEngineWrap.csproj">
+    <ProjectReference Include="..\..\MainEngineWrap\MainEngineWrap\cpv.csproj">
       <Project>{62DA9068-659E-4F97-BB63-D47902C0CF3C}</Project>
-      <Name>MainEngineWrap</Name>
+      <Name>cpv</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

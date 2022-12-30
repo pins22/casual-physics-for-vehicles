@@ -67,6 +67,7 @@ namespace cpv
 
             // setters
             void setCurrentGear(int gear);
+            void setFinalDriveRatio(double finalDriveRatio);
 
         protected:
             std::vector<double> gearRatios; // gear ratios of the transmission (0 = reverse, 1 = 1st, 2 = 2nd, 3 = 3rd, 4 = 4th, 5 = 5th, 6 = 6th...)

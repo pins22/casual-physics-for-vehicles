@@ -10,13 +10,13 @@ namespace cpv
         {
         public:
             /**
-             * @brief Default constructor for the CpvLongitudinalForceModel class
+             * @brief Default constructor for the LongitudinalForceModel class
              * @details Sets all values to 0
              */
             LongitudinalForceModel();
 
             /**
-             * @brief Basic constructor for the CpvLongitudinalForceModel class
+             * @brief Basic constructor for the LongitudinalForceModel class
              * @details Sets all values to the given values
              *
              * @param mass the mass of the vehicle [kg]

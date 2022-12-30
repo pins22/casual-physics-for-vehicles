@@ -6,6 +6,7 @@
 #include "vehicle/movement/LongitudinalForceModel.h"
 #include "vehicle/brake/Brake.h"
 #include "vehicle/powertrain/Engine.h"
+#include "vehicle/powertrain/Transmission.h"
 #include "core/FunctionCurve3.h"
 
 #include "rapidjson/document.h"
@@ -42,11 +43,14 @@ namespace cpv
 
         std::shared_ptr<Engine> getEngine();
         std::shared_ptr<Brake> getBrake();
+        std::shared_ptr<Transmission> getTransmission();
         std::shared_ptr<LongitudinalForceModel> getLongitudinalForceModel();
+        
 
     private:
         std::shared_ptr<Engine> engine;
         std::shared_ptr<Brake> brake;
+        std::shared_ptr<Transmission> transmission;
         std::shared_ptr<LongitudinalForceModel> longitudinalForceModel;
     };
 }

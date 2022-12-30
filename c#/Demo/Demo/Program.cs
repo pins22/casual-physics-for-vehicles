@@ -51,6 +51,8 @@ namespace Demo
 }
             ");
 
+            engine.vehicleEngine.idleRpm = 100;
+
             Console.WriteLine(engine.vehicleEngine.maxRpm);
             Console.WriteLine(engine.vehicleEngine.idleRpm);
         }

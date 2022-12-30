@@ -7,6 +7,7 @@ namespace cpv
     {
         engine = std::make_shared<Engine>();
         brake = std::make_shared<Brake>();
+        transmission = std::make_shared<Transmission>();
         longitudinalForceModel = std::make_shared<LongitudinalForceModel>();
     }
 
@@ -84,6 +85,11 @@ namespace cpv
     std::shared_ptr<LongitudinalForceModel> MainEngine::getLongitudinalForceModel()
     {
         return longitudinalForceModel;
+    }
+    
+    std::shared_ptr<Transmission> MainEngine::getTransmission()
+    {
+        return transmission;
     }
 }
 

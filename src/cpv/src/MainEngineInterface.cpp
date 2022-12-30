@@ -41,6 +41,16 @@ extern "C"
         return nullptr;
     }
 
+    DLL_EXPORT cpv::Transmission *MainEngine_getTransmission(cpv::MainEngine *mainEngine)
+    {
+        if (mainEngine)
+        {
+            return mainEngine->getTransmission().get();
+        }
+
+        return nullptr;
+    }
+
     DLL_EXPORT cpv::LongitudinalForceModel *MainEngine_getLongitudinalForceModel(cpv::MainEngine *mainEngine)
     {
         if (mainEngine)

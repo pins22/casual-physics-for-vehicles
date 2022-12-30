@@ -67,5 +67,10 @@ namespace cpv
         {
             currentGear = gear;
         }
+        
+        void Transmission::setFinalDriveRatio(double finalDriveRatio)
+        {
+            this->finalDriveRatio = finalDriveRatio;
+        }
     }
 }

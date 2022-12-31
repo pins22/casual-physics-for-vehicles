@@ -3,3 +3,4 @@
 /home/asusnik/casual-physics-for-vehicles/c#/MainEngineWrap/MainEngineWrap/obj/Debug/cpv.csproj.CoreCompileInputs.cache
 /home/asusnik/casual-physics-for-vehicles/c#/MainEngineWrap/MainEngineWrap/obj/Debug/MainEngineWrap.dll
 /home/asusnik/casual-physics-for-vehicles/c#/MainEngineWrap/MainEngineWrap/obj/Debug/MainEngineWrap.pdb
+/home/asusnik/casual-physics-for-vehicles/c#/MainEngineWrap/MainEngineWrap/obj/Debug/cpv.csproj.AssemblyReference.cache

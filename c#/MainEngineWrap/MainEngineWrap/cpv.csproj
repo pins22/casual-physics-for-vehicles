@@ -37,6 +37,7 @@
     <Compile Include="MainEngine.cs" />
     <Compile Include="VehicleEngine.cs" />
     <Compile Include="Brake.cs" />
+    <Compile Include="Transmission.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

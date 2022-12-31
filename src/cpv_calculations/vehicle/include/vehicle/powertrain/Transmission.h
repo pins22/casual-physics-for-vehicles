@@ -66,6 +66,7 @@ namespace cpv
             int getCurrentGear();
 
             // setters
+            void setGearRatios(std::vector<double>&& gearRatios);
             void setCurrentGear(int gear);
             void setFinalDriveRatio(double finalDriveRatio);
 

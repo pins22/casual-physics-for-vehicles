@@ -41,6 +41,8 @@ namespace cpv
         void initializeVehicle(const std::string &vehicleParametersJson);
         void initializeVehicle(const char *vehicleParametersJson);
 
+        double calculateLongitudinalForce(double velocity, double slope, double brakeAmount);
+
         std::shared_ptr<Engine> getEngine();
         std::shared_ptr<Brake> getBrake();
         std::shared_ptr<Transmission> getTransmission();

@@ -53,6 +53,11 @@ namespace cpv
             return gearRatios;
         }
 
+        void Transmission::setGearRatios(std::vector<double>&& gearRatios)
+        {
+            this->gearRatios = gearRatios;
+        }
+
         double Transmission::getFinalDriveRatio()
         {
             return finalDriveRatio;

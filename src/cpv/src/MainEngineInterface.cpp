@@ -60,4 +60,14 @@ extern "C"
 
         return nullptr;
     }
+
+    DLL_EXPORT double MainEngine_calculateLongitudinalForce(cpv::MainEngine *mainEngine, double velocity, double slope, double brakeAmount)
+    {
+        if (mainEngine)
+        {
+            return mainEngine->calculateLongitudinalForce(velocity, slope, brakeAmount);
+        }
+
+        return 0.0;
+    }
 }

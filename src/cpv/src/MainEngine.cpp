@@ -72,6 +72,12 @@ namespace cpv
             }
         }
     }
+
+    double MainEngine::calculateLongitudinalForce(double velocity, double slope, double brakeAmount)
+    {
+        return 1.0;
+    }
+
     std::shared_ptr<Engine> MainEngine::getEngine()
     {
         return engine;

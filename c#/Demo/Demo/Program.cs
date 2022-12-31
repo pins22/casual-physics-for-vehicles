@@ -55,6 +55,22 @@ namespace Demo
 
             Console.WriteLine(engine.vehicleEngine.maxRpm);
             Console.WriteLine(engine.vehicleEngine.idleRpm);
+
+            Transmission t = engine.transmission;
+
+            Console.WriteLine(t.currentGear);
+            Console.WriteLine(t.driveRatio);
+
+            double[] dr = new double[] { 1, 3, 5 };
+
+            t.gearRatios = dr;
+
+            double[] tmp = t.gearRatios;
+            foreach(double gr in tmp)
+            {
+                Console.WriteLine(gr);
+            }
+
         }
     }
 }

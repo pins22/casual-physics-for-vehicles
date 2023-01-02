@@ -1,4 +1,6 @@
-all: compile install create_assembly
+all: setup compile install create_assembly
+setup:
+	meson setup builddir
 compile:
 	cd builddir; meson compile
 install:

@@ -11,7 +11,7 @@ namespace cpv
             engineInstance = MainEngine_getEngine(instance);
             brakeInstance = MainEngine_getBrake(instance);
             transmissionInstance = MainEngine_getTransmission(instance);
-             
+
             vehicleEngine = new VehicleEngine(engineInstance);
             brake = new Brake(brakeInstance);
             transmission = new Transmission(transmissionInstance);

@@ -66,28 +66,28 @@ namespace cpv
 
         private IntPtr instance;
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern void Engine_setIdleRpm(IntPtr engine, int idleRpm);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern int Engine_getIdleRpm(IntPtr engine);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern void Engine_setMaxRpm(IntPtr engine, int maxRpm);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern int Engine_getMaxRpm(IntPtr engine);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern void Engine_setRpm(IntPtr engine, int rpm);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern int Engine_getRpm(IntPtr engine);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern void Engine_setThrottle(IntPtr engine, double throttle);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern double Engine_getThrottle(IntPtr engine);
 
     }

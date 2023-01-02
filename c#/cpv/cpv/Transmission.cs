@@ -62,22 +62,22 @@ namespace cpv
 
         private IntPtr instance;
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern void Transmission_setFinalDriveRatio(IntPtr transmission, double driveRatio);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern double Transmission_getFinalDriveRatio(IntPtr transmission);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern void Transmission_setCurrentGear(IntPtr transmission, int currentGear);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern int Transmission_getCurrentGear(IntPtr transmission);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern void Transmission_setGearRatios(IntPtr transmission, double[] ratios, int size);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern void Transmission_getGearRatios(IntPtr transmission, out IntPtr array, out int size);
     }
 }

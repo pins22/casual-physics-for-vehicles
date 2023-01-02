@@ -20,9 +20,9 @@ namespace cpv
 
         // Get the brake force[N]
         // The brake force is calculated using the brake force constant and unit vector of the movement direction
-        double Brake::calculateBrakingForce(double brake)
+        double Brake::calculateBrakingForce(double brakeAmount)
         {
-            return maxBrakeTorque * brake;
+            return maxBrakeTorque * brakeAmount;
         }
 
         void Brake::setMaxBrakeTorque(double maxBrakeTorque)

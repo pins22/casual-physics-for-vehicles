@@ -29,10 +29,9 @@ namespace cpv
              * @brief Get the brake force[N]
              * @details The brake force is calculated using the brake force constant and the unit vector of the movement direction
              *
-             * @param movingDirection unit vector of the movement direction
-             * @param brake the brake amount [0, 1]
+             * @param brakeAmount the brake amount [0, 1]
              */
-            double calculateBrakingForce(double brake);
+            double calculateBrakingForce(double brakeAmount);
 
             void setMaxBrakeTorque(double maxBrakeTorque);
             double getMaxBrakeTorque();

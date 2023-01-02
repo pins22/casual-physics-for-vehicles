@@ -25,16 +25,16 @@ namespace cpv
             LongitudinalForceModel(double mass, double dragConst, double rollingResistanceConst);
 
             /**
-             * @brief Get the longitudinal force[N] at the given velocity, wheelTorque on the wheels, radius of the wheels, the slope of the road
+             * @brief Get the longitudinal force[N] at the given velocity, wheelTorque on the wheels, radius of the wheels, the slope of the road, the braking torque
              * @details The longitudinal force is calculated using the drag force, the rolling resistance force, the gravitational force and the traction force
              *
              * @param velocity the velocity of the vehicle [m/s]
              * @param wheelTorque the wheelTorque on the wheels [Nm]
              * @param radius the radius of the wheels [m]
              * @param slope the slope of the road [rad] (flat = 0, uphill = positive, downhill = negative)
-             * @param brakingAmount the amount of braking [0, 1]
+             * @param brakingTorque the amount torque of the brakes [Nm]
              */
-            double calculateLongitudinalForce(double velocity, double wheelTorque, double radius, double slope, double brakingAmount);
+            double calculateLongitudinalForce(double velocity, double wheelTorque, double radius, double slope, double brakingTorque);
 
         private:
             // vehicle specific constants
@@ -76,8 +76,11 @@ namespace cpv
             double calculateTractionForce(double wheelTorque, double radius);
 
             /**
-             * @brief Get the braking force[N] at the given Brake class and the braking amount
-             * @details The braking force is calculated using the brake force constant and the braking amount
+             * @brief Get the braking force[N] at the given brakingToruqe on the wheels and the radius of the wheels
+             * @details The braking force is calculated using the torque on the wheels and the radius of the wheels
+             * 
+             * @param brakingToruqe the torque on the wheels [Nm]
+             * @param radius the radius of the wheels [m]
              */
             double calculateBrakingForce(double brakingToruqe, double radius);
         };

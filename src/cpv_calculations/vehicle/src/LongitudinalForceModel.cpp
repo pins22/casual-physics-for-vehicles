@@ -1,5 +1,4 @@
 #include "vehicle/movement/LongitudinalForceModel.h"
-#include "vehicle/brake/Brake.h"
 #include <cmath>
 
 #define GRAVITATIONAL_ACCELERATION 9.81
@@ -12,7 +11,6 @@ namespace cpv
         double mass;                   // mass is the total mass of the vehicle [kg]
         double dragConst;              // dragConst is the drag coefficient of the vehicle
         double rollingResistanceConst; // rollingResistanceConst is the rolling resistance coefficient of the vehicle (tires)
-        Brake brake;                   // brake is the brake class of the vehicle
 
         // Default constructor for the CpvLongitudinalForceModel class
         // Sets all values to 0
@@ -25,18 +23,17 @@ namespace cpv
 
         // Basic constructor for the CpvLongitudinalForceModel class
         // Sets all values to the given values
-        LongitudinalForceModel::LongitudinalForceModel(double mass, double dragConst, double rollingResistanceConst, Brake brakeType)
+        LongitudinalForceModel::LongitudinalForceModel(double mass, double dragConst, double rollingResistanceConst)
         {
             this->mass = mass;
             this->dragConst = dragConst;
             this->rollingResistanceConst = rollingResistanceConst;
-            this->brake = brakeType;
         }
 
         // Calculate the longitudinal force[N] at the given velocity, wheelTorque on the wheels, radius of the wheels, the slope of the road, the amount of braking [0, 1]
-        double LongitudinalForceModel::calculateLongitudinalForce(double velocity, double wheelTorque, double radius, double slope, double brakingAmount)
+        double LongitudinalForceModel::calculateLongitudinalForce(double velocity, double wheelTorque, double radius, double slope, double brakingTorque)
         {
-            return calculateDragForce(velocity) + calculateRollingResistanceForce(velocity) + calculateGravitationalForce(slope) + calculateTractionForce(wheelTorque, radius) + calculateBrakingForce(brakingAmount);
+            return calculateDragForce(velocity) + calculateRollingResistanceForce(velocity) + calculateGravitationalForce(slope) + calculateTractionForce(wheelTorque, radius) + calculateBrakingForce(brakingTorque, radius);
         }
 
         // Calculate the drag force[N] at the given velocity
@@ -69,9 +66,9 @@ namespace cpv
 
         // Get the braking force[N] at the given amount of braking
         // The braking force is calculated using the amount of braking and the braking force of the brake class
-        double LongitudinalForceModel::calculateBrakingForce(double brakingAmount)
+        double LongitudinalForceModel::calculateBrakingForce(double brakingTorque, double radius)
         {
-            return -brake.calculateBrakingForce(brakingAmount);
+            return brakingTorque / radius;
         }
     }
 }

@@ -1,7 +1,5 @@
 #pragma once
 
-#include "vehicle/brake/Brake.h"
-
 namespace cpv
 {
     namespace vehicle
@@ -24,7 +22,7 @@ namespace cpv
              * @param rollingResistanceConst the rolling resistance constant of the vehicle
              * @param brake the brake class of the vehicle
              */
-            LongitudinalForceModel(double mass, double dragConst, double rollingResistanceConst, Brake brakeType);
+            LongitudinalForceModel(double mass, double dragConst, double rollingResistanceConst);
 
             /**
              * @brief Get the longitudinal force[N] at the given velocity, wheelTorque on the wheels, radius of the wheels, the slope of the road
@@ -43,7 +41,6 @@ namespace cpv
             double mass;                   // mass is the mass of the vehicle [kg]
             double dragConst;              // dragConst is the drag constant of the vehicle [kg/m]
             double rollingResistanceConst; // rollingResistanceConst is the rolling resistance constant of the vehicle
-            Brake brake;                   // brake is the brake class of the vehicle
 
             /**
              * @brief Calculate the drag force[N] at the given velocity
@@ -82,7 +79,7 @@ namespace cpv
              * @brief Get the braking force[N] at the given Brake class and the braking amount
              * @details The braking force is calculated using the brake force constant and the braking amount
              */
-            double calculateBrakingForce(double brakingAmount);
+            double calculateBrakingForce(double brakingToruqe, double radius);
         };
     }
 }

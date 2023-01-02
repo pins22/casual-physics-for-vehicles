@@ -1,0 +1,3 @@
+/home/asusnik/casual-physics-for-vehicles/c#/cpv/cpv/bin/Release/cpv.dll
+/home/asusnik/casual-physics-for-vehicles/c#/cpv/cpv/obj/Release/cpv.csproj.CoreCompileInputs.cache
+/home/asusnik/casual-physics-for-vehicles/c#/cpv/cpv/obj/Release/cpv.dll

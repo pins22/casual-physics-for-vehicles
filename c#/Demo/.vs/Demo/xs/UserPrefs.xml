@@ -1,19 +1,14 @@
 ﻿<Properties StartupConfiguration="{4698265C-4170-43F9-A7F7-CCB69F43AD0B}|Default">
   <MonoDevelop.Ide.ItemProperties.Demo PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../MainEngineWrap/MainEngineWrap/Transmission.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Demo/Program.cs">
     <Files>
-      <File FileName="Demo/Program.cs" Line="54" Column="48" />
-      <File FileName="../MainEngineWrap/MainEngineWrap/MainEngine.cs" Line="18" Column="10" />
-      <File FileName="../MainEngineWrap/MainEngineWrap/Transmission.cs" Line="54" Column="85" />
+      <File FileName="Demo/Program.cs" Line="18" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Demo" expanded="True">
-            <Node name="cpv" expanded="True">
-              <Node name="Transmission.cs" selected="True" />
-            </Node>
-            <Node name="Demo" expanded="True">
+            <Node name="Demo" expanded="True" selected="True">
               <Node name="References" expanded="True" />
             </Node>
           </Node>
@@ -24,7 +19,9 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/home/asusnik/casual-physics-for-vehicles/c#/Demo/Demo/Program.cs" relfile="Demo/Program.cs" line="10" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

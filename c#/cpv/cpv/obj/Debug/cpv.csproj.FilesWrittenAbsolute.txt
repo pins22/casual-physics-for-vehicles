@@ -1,0 +1,5 @@
+/home/asusnik/casual-physics-for-vehicles/c#/cpv/cpv/obj/Debug/.NETPortable,Version=v4.5,Profile=Profile111.AssemblyAttribute.cs
+/home/asusnik/casual-physics-for-vehicles/c#/cpv/cpv/bin/Debug/cpv.pdb
+/home/asusnik/casual-physics-for-vehicles/c#/cpv/cpv/bin/Debug/cpv.dll
+/home/asusnik/casual-physics-for-vehicles/c#/cpv/cpv/obj/Debug/cpv.dll
+/home/asusnik/casual-physics-for-vehicles/c#/cpv/cpv/obj/Debug/cpv.pdb

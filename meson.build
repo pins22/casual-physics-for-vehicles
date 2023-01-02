@@ -10,4 +10,3 @@ rapidjson_dep = rapidjson_proj.get_variable('rapidjson_dep')
 
 subdir('src')
 
- 

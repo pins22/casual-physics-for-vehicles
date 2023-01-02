@@ -1,31 +1,32 @@
 #include "vehicle/movement/LongitudinalForceModel.h"
 #include <cmath>
 
-#define GRAVITATIONAL_ACCELERATION 9.81
-
 namespace cpv
 {
     namespace vehicle
     {
-        // vehicle specific constants
-        double mass;                   // mass is the total mass of the vehicle [kg]
-        double dragConst;              // dragConst is the drag coefficient of the vehicle
-        double rollingResistanceConst; // rollingResistanceConst is the rolling resistance coefficient of the vehicle (tires)
+        // constants
+        double mass;                      // mass is the total mass of the vehicle [kg]
+        double gravitationalAcceleration; // gravitationalAcceleration is the gravitational acceleration of the vehicle [m/s^2]
+        double dragConst;                 // dragConst is the drag coefficient of the vehicle
+        double rollingResistanceConst;    // rollingResistanceConst is the rolling resistance coefficient of the vehicle (tires)
 
         // Default constructor for the CpvLongitudinalForceModel class
         // Sets all values to 0
         LongitudinalForceModel::LongitudinalForceModel()
         {
             mass = 0.0;
+            gravitationalAcceleration = 0.0;
             dragConst = 0.0;
             rollingResistanceConst = 0.0;
         }
 
         // Basic constructor for the CpvLongitudinalForceModel class
         // Sets all values to the given values
-        LongitudinalForceModel::LongitudinalForceModel(double mass, double dragConst, double rollingResistanceConst)
+        LongitudinalForceModel::LongitudinalForceModel(double mass, double gravitationalAcceleration, double dragConst, double rollingResistanceConst)
         {
             this->mass = mass;
+            this->gravitationalAcceleration = gravitationalAcceleration;
             this->dragConst = dragConst;
             this->rollingResistanceConst = rollingResistanceConst;
         }
@@ -54,7 +55,7 @@ namespace cpv
         // The gravitational force is calculated using the mass of the vehicle, gravitational acceleration, the slope of the road
         double LongitudinalForceModel::calculateGravitationalForce(double slope)
         {
-            return mass * GRAVITATIONAL_ACCELERATION * sin(slope);
+            return mass * gravitationalAcceleration * sin(slope);
         }
 
         // Get the traction force[N] at the given wheelTorque on the wheels and the radius of the wheels

@@ -22,7 +22,7 @@ namespace cpv
              * @param rollingResistanceConst the rolling resistance constant of the vehicle
              * @param brake the brake class of the vehicle
              */
-            LongitudinalForceModel(double mass, double dragConst, double rollingResistanceConst);
+            LongitudinalForceModel(double mass, double gravitationalAcceleration, double dragConst, double rollingResistanceConst);
 
             /**
              * @brief Get the longitudinal force[N] at the given velocity, wheelTorque on the wheels, radius of the wheels, the slope of the road, the braking torque
@@ -37,10 +37,11 @@ namespace cpv
             double calculateLongitudinalForce(double velocity, double wheelTorque, double radius, double slope, double brakingTorque);
 
         private:
-            // vehicle specific constants
-            double mass;                   // mass is the mass of the vehicle [kg]
-            double dragConst;              // dragConst is the drag constant of the vehicle [kg/m]
-            double rollingResistanceConst; // rollingResistanceConst is the rolling resistance constant of the vehicle
+            // constants
+            double mass;                      // mass is the mass of the vehicle [kg]
+            double gravitationalAcceleration; // gravitationalAcceleration is the gravitational acceleration of the vehicle [m/s^2]
+            double dragConst;                 // dragConst is the drag constant of the vehicle [kg/m]
+            double rollingResistanceConst;    // rollingResistanceConst is the rolling resistance constant of the vehicle
 
             /**
              * @brief Calculate the drag force[N] at the given velocity
@@ -78,7 +79,7 @@ namespace cpv
             /**
              * @brief Get the braking force[N] at the given brakingToruqe on the wheels and the radius of the wheels
              * @details The braking force is calculated using the torque on the wheels and the radius of the wheels
-             * 
+             *
              * @param brakingToruqe the torque on the wheels [Nm]
              * @param radius the radius of the wheels [m]
              */

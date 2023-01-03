@@ -43,28 +43,28 @@ namespace cpv
         public Brake brake;
         public Transmission transmission;
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern IntPtr MainEngine_new();
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern void MainEngine_delete(IntPtr engine);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern void MainEngine_initialize(IntPtr engine, String str);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern IntPtr MainEngine_getEngine(IntPtr engine);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern IntPtr MainEngine_getBrake(IntPtr engine);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern IntPtr MainEngine_getTransmission(IntPtr engine);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern IntPtr MainEngine_getLongitudinalForceModel(IntPtr engine);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern double MainEngine_calculateLongitudinalForce(IntPtr engine, double velocity, double slope, double brakeAmount);
     }
 }

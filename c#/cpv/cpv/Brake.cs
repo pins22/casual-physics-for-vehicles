@@ -29,10 +29,10 @@ namespace cpv
 
         private IntPtr instance;
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern void Brake_setMaxBrakeTorque(IntPtr brake, double maxBrakeTorque);
 
-        [DllImport("libengine.so")]
+        [DllImport("libengine.dll")]
         private static extern double Brake_getMaxBrakeTorque(IntPtr brake);
     }
 }

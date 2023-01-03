@@ -35,6 +35,14 @@ namespace cpv
             double getAngularVelocity(double longitudinalVelocity, double steeringAngle);
 
             /**
+             * @brief Get the turning radius of the vehicle
+             *
+             * @param steeringAngle the steering angle[rad] of the vehicle (user input)
+             * @return double
+             */
+            double getTurningRadius(double steeringAngle);
+
+            /**
              * @brief Get the front tyre slip angle[rad]
              *
              * @param longitudinalVelocity the longitudinal velocity[m/s] of the vehicle

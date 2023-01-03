@@ -24,21 +24,31 @@ namespace cpv
         }
 
         // Get front wheel lateral force[N]
-        double LateralForceModel::getFrontWheelLateralForce(double frontLateralForce, double slope)
+        double LateralForceModel::getFrontWheelLateralForce(double frontCorneringForce, double percentageOfWeightOnFrontWheel, double slope)
         {
-            return frontLateralForce + calculateGravitationalForce(slope);
+            double frontGravitationalForce = calculateFrontGravitationalForce(slope, percentageOfWeightOnFrontWheel);
+            return frontCorneringForce + frontGravitationalForce;
         }
 
         // Get rear wheel lateral force[N]
-        double LateralForceModel::getRearWheelLateralForce(double rearLateralForce, double slope)
+        double LateralForceModel::getRearWheelLateralForce(double rearCorneringForce, double percentageOfWeightOnFrontWheel, double slope)
         {
-            return rearLateralForce + calculateGravitationalForce(slope);
+            double rearGravitationalForce = calculateRearGravitationalForce(slope, percentageOfWeightOnFrontWheel);
+            return rearCorneringForce + rearGravitationalForce;
         }
 
-        // Calculate the gravitational force[N] at the given slope
-        double LateralForceModel::calculateGravitationalForce(double slope)
+        // Calculate the front gravitational force[N] at the given slope
+        double LateralForceModel::calculateFrontGravitationalForce(double slope, double percentageOfWeightOnFrontWheel)
         {
-            return mass * gravitationalAcceleration * sin(slope);
+            double frontWeight = mass * percentageOfWeightOnFrontWheel;
+            return frontWeight * gravitationalAcceleration * sin(slope);
+        }
+
+        // Calculate the rear gravitational force[N] at the given slope
+        double LateralForceModel::calculateRearGravitationalForce(double slope, double percentageOfWeightOnFrontWheel)
+        {
+            double rearWeight = mass * (1 - percentageOfWeightOnFrontWheel);
+            return rearWeight * gravitationalAcceleration * sin(slope);
         }
     }
 }

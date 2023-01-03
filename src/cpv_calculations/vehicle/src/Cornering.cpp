@@ -27,7 +27,12 @@ namespace cpv
         // calculate the angular velocity of the vehicle [rad/s]
         double Cornering::getAngularVelocity(double longitudinalVelocity, double steeringAngle)
         {
-            return longitudinalVelocity / (wheelBase / sin(steeringAngle));
+            return longitudinalVelocity / getTurningRadius(steeringAngle);
+        }
+
+        double Cornering::getTurningRadius(double steeringAngle)
+        {
+            return wheelBase / tan(steeringAngle);
         }
 
         // calculate the front tyre slip angle [rad]

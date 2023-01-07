@@ -59,8 +59,6 @@ namespace cpv
             return rearTyre.getLateralForce(slipAngle, load);
         }
 
-
-
         template <typename T>
         int sgn(T val)
         {

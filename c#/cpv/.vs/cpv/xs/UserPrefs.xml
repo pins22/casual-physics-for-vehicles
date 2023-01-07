@@ -1,19 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="cpv/VehicleEngine.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="cpv/core/Vector2.cs">
     <Files>
-      <File FileName="cpv/Properties/AssemblyInfo.cs" Line="10" Column="29" />
-      <File FileName="cpv/MainEngine.cs" Line="67" Column="34" />
-      <File FileName="cpv/Brake.cs" Line="35" Column="34" />
-      <File FileName="cpv/Transmission.cs" Line="80" Column="34" />
-      <File FileName="cpv/VehicleEngine.cs" Line="75" Column="31" />
+      <File FileName="cpv/core/Vector2.cs" Line="44" Column="35" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="cpv" expanded="True">
             <Node name="cpv" expanded="True">
+              <Node name="core" expanded="True">
+                <Node name="Vector2.cs" selected="True" />
+              </Node>
               <Node name="Properties" expanded="True" />
-              <Node name="VehicleEngine.cs" selected="True" />
             </Node>
           </Node>
         </State>

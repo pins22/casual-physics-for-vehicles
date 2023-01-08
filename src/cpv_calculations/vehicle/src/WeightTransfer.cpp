@@ -5,14 +5,6 @@ namespace cpv
 {
     namespace vehicle
     {
-        double vehicleMass;
-        double gravity;
-        double weightDistributionFront;
-        double centreOfGravityHeight;
-        double wheelBase;
-        double trackWidth;
-        double maxBodyRollAngle;
-
         WeightTransfer::WeightTransfer()
         {
             this->vehicleMass = 0;

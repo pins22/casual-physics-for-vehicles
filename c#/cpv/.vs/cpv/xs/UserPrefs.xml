@@ -1,17 +1,7 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workbench ActiveDocument="cpv/VehicleEngine.cs">
     <Files>
-      <File FileName="cpv/Common/Common.cs" Line="1" Column="1" />
-      <File FileName="cpv/core/FunctionCurve2.cs" Line="49" Column="1" />
-      <File FileName="cpv/core/FunctionCurve3.cs" Line="29" Column="10" />
-      <File FileName="cpv/core/Vector2.cs" Line="102" Column="41" />
-      <File FileName="cpv/core/Vector3.cs" Line="121" Column="1" />
-      <File FileName="cpv/Properties/AssemblyInfo.cs" Line="16" Column="29" />
-      <File FileName="cpv/Brake.cs" Line="15" Column="36" />
-      <File FileName="cpv/MainEngine.cs" Line="26" Column="1" />
-      <File FileName="cpv/packages.config" Line="1" Column="1" />
-      <File FileName="cpv/Transmission.cs" Line="26" Column="14" />
-      <File FileName="cpv/VehicleEngine.cs" Line="29" Column="21" />
+      <File FileName="cpv/VehicleEngine.cs" Line="15" Column="38" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

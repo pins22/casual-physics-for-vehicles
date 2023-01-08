@@ -10,25 +10,40 @@ namespace cpv
         Tyre frontTyre;   // tyre is the front tyre class of the vehicle
         Tyre rearTyre;    // tyre is the rear tyre class of the vehicle
         double wheelBase; // wheelBase is the distance between the front and rear axle of the vehicle[m]
+        double inertia;   // inertia is the inertia of the vehicle[kg*m^2]
 
         Cornering::Cornering()
         {
             frontTyre = Tyre();
             rearTyre = Tyre();
             wheelBase = 0.0;
+            inertia = 0.0;
         }
 
-        Cornering::Cornering(Tyre frontTyre, Tyre rearTyre, double wheelBase)
+        Cornering::Cornering(Tyre frontTyre, Tyre rearTyre, double wheelBase, double inertia)
         {
             this->frontTyre = frontTyre;
             this->rearTyre = rearTyre;
             this->wheelBase = wheelBase;
+            this->inertia = inertia;
         }
 
         // calculate the car turning torque [Nm]
         double Cornering::getCarTurningTorque(double steeringAngle, double frontWheelLateralForce, double rearWheelLateralForce, double percentageOfWeightOnFrontWheel)
         {
             return cos(steeringAngle) * frontWheelLateralForce * (1 - percentageOfWeightOnFrontWheel) * wheelBase - rearWheelLateralForce * percentageOfWeightOnFrontWheel * wheelBase;
+        }
+
+        // calculate the angular acceleration of the vehicle [rad/s^2]
+        double Cornering::getAngularAcceleration(double steeringAngle, double frontWheelLateralForce, double rearWheelLateralForce, double percentageOfWeightOnFrontWheel)
+        {
+            return getCarTurningTorque(steeringAngle, frontWheelLateralForce, rearWheelLateralForce, percentageOfWeightOnFrontWheel) / inertia;
+        }
+
+        // calculate the angular acceleration of the vehicle [rad/s^2]
+        double Cornering::getAngularAcceleration(double carTurningTorque)
+        {
+            return carTurningTorque / inertia;
         }
 
         // calculate the angular velocity of the vehicle [rad/s]

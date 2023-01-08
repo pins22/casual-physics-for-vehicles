@@ -6,5 +6,5 @@ compile:
 install:
 	meson install -C builddir
 create_assembly:
-	xbuild "c#/cpv/cpv.sln"
+	msbuild "c#/cpv/cpv.sln"
 	

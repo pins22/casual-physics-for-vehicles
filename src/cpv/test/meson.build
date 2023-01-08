@@ -1,0 +1,2 @@
+testengine = executable('testengine', 'MainEngineTest.cpp',include_directories: [maininc, coreinc, vehicleinc], dependencies: [gtest_dep, gmock_dep, rapidjson_dep], link_with: [mainlib])
+test('engine tests', testengine)

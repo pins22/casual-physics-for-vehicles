@@ -1,0 +1,10 @@
+/home/asusnik/casual-physics-for-vehicles/c#/MainEngineWrap/MainEngineWrap/bin/Debug/cpv.dll
+/home/asusnik/casual-physics-for-vehicles/c#/MainEngineWrap/MainEngineWrap/bin/Debug/cpv.pdb
+/home/asusnik/casual-physics-for-vehicles/c#/MainEngineWrap/MainEngineWrap/obj/Debug/cpv.csproj.CoreCompileInputs.cache
+/home/asusnik/casual-physics-for-vehicles/c#/MainEngineWrap/MainEngineWrap/obj/Debug/cpv.dll
+/home/asusnik/casual-physics-for-vehicles/c#/MainEngineWrap/MainEngineWrap/obj/Debug/cpv.pdb
+/home/asusnik/casual-physics-for-vehicles/c#/cpv/cpv/bin/Debug/cpv.dll
+/home/asusnik/casual-physics-for-vehicles/c#/cpv/cpv/bin/Debug/cpv.pdb
+/home/asusnik/casual-physics-for-vehicles/c#/cpv/cpv/obj/Debug/cpv.csproj.CoreCompileInputs.cache
+/home/asusnik/casual-physics-for-vehicles/c#/cpv/cpv/obj/Debug/cpv.dll
+/home/asusnik/casual-physics-for-vehicles/c#/cpv/cpv/obj/Debug/cpv.pdb

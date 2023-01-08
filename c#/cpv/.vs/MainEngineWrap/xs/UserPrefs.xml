@@ -1,0 +1,24 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="MainEngineWrap/MainEngine.cs">
+    <Files>
+      <File FileName="MainEngineWrap/MainEngine.cs" Line="30" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MainEngineWrap" expanded="True">
+            <Node name="MainEngineWrap" expanded="True">
+              <Node name="MainEngine.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

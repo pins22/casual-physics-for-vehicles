@@ -22,6 +22,13 @@ jobs:
       uses: bus1/cabuild/action/msdevshell@v1
       with:
         architecture: x64
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: | 
+          3.1.x
+          4.0.x
+          5.0.x
     - uses: actions/checkout@v3
     - name: make
       run: make

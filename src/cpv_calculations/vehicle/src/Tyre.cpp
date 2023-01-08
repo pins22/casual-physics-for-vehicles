@@ -33,9 +33,9 @@ namespace cpv
         }
 
         // getters
-        FunctionCurve2 Tyre::getLateralForceAtSlipAngle() const { return lateralForceAtSlipAngle; }
-        double Tyre::getLateralForceAtSlipAngleLoad() const { return lateralForceAtSlipAngleLoad; }
-        double Tyre::getMaxTyreForce() const { return tyreForceCap; }
+        FunctionCurve2 Tyre::getLateralForceAtSlipAngle() { return lateralForceAtSlipAngle; }
+        double Tyre::getLateralForceAtSlipAngleLoad() { return lateralForceAtSlipAngleLoad; }
+        double Tyre::getMaxTyreForce() { return tyreForceCap; }
 
         // setters
         void Tyre::setLateralForceAtSlipAngle(FunctionCurve2 lateralForceAtSlipAngle) { this->lateralForceAtSlipAngle = lateralForceAtSlipAngle; }

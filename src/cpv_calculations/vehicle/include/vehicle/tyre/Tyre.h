@@ -45,9 +45,9 @@ namespace cpv
             double getWheelRotationRateAtCarSpeed(double carSpeed, double wheelRadius);
 
             // getters
-            FunctionCurve2 getLateralForceAtSlipAngle() const { return lateralForceAtSlipAngle; }
-            double getLateralForceAtSlipAngleLoad() const { return lateralForceAtSlipAngleLoad; }
-            double getMaxTyreForce() const { return tyreForceCap; }
+            FunctionCurve2 getLateralForceAtSlipAngle() { return lateralForceAtSlipAngle; }
+            double getLateralForceAtSlipAngleLoad() { return lateralForceAtSlipAngleLoad; }
+            double getMaxTyreForce() { return tyreForceCap; }
 
             // setters
             void setLateralForceAtSlipAngle(FunctionCurve2 lateralForceAtSlipAngle) { this->lateralForceAtSlipAngle = lateralForceAtSlipAngle; }

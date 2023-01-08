@@ -1,6 +1,6 @@
+#define _USE_MATH_DEFINES
 #include "vehicle/powertrain/Transmission.h"
 #include <vector>
-#define _USE_MATH_DEFINES
 #include <cmath>
 
 namespace cpv

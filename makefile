@@ -2,9 +2,9 @@ all: setup compile install create_assembly
 setup:
 	meson setup builddir
 compile:
-	cd builddir; meson compile
+	meson compile -C builddir
 install:
-	cd builddir; meson install
+	meson install -C builddir
 create_assembly:
 	xbuild "c#/cpv/cpv.sln"
 	

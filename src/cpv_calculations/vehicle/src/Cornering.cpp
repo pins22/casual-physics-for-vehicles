@@ -1,5 +1,6 @@
 #include "vehicle/steering/Cornering.h"
 #include "vehicle/tyre/Tyre.h"
+#include <cmath>
 
 namespace cpv
 {

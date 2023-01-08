@@ -4,6 +4,8 @@ namespace cpv
 {
     namespace vehicle
     {
+        double maxBrakeTorque;
+
         // Default constructor for the Brake class
         // Sets all values to 0
         Brake::Brake()

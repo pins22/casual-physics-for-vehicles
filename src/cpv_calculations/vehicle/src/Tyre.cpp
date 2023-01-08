@@ -5,6 +5,10 @@ namespace cpv
 {
     namespace vehicle
     {
+        FunctionCurve2 lateralForceAtSlipAngle; // lateralForceAtSlipAngle is the slip angle[rad] at lateral force[N] and load[N]
+        double lateralForceAtSlipAngleLoad;     // amount of load[N] at which the lateral force[N] is graphed on lateralForceAtSlipAngle
+        double tyreForceCap;                    // tyreForceCap is the max tyre force[N]
+
         Tyre::Tyre()
         {
             // vehicle specific constants

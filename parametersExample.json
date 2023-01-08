@@ -1,8 +1,8 @@
 {
-  "mass": 1300,
+  "gravitationalAcceleration": 9.81,
   "vehicleEngine": {
-    "idleRPM": 800,
-    "maxRPM": 8000,
+    "idleRPM": 850,
+    "maxRPM": 7000,
     "torqueCurve": [
       {
         "throttle": 0.0,
@@ -52,5 +52,13 @@
       },
       "forceCap": 5000
     }
+  },
+  "weightTransfer": {
+    "mass": 1100,
+    "weightDistributionFront": 0.5,
+    "centreOfGravityHeight": 0.5,
+    "wheelBase": 2.425,
+    "trackWidth": 1.45,
+    "maxBodyRollAngle": 0.35
   }
 }

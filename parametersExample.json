@@ -45,14 +45,12 @@
     "forceCap": 5000
   },
   "rearTyre": {
-    "frontTyre": {
-      "lateralForceAtSlipAngle": {
-        "atLoad": 5000,
-        "slipAngle": [-20, -3, 0, 3, 20],
-        "lateralForce": [-5000, -5800, 0, 5800, 5000]
-      },
-      "forceCap": 5000
-    }
+    "lateralForceAtSlipAngle": {
+      "atLoad": 5000,
+      "slipAngle": [-20, -3, 0, 3, 20],
+      "lateralForce": [-5000, -5800, 0, 5800, 5000]
+    },
+    "forceCap": 5000
   },
   "weightTransfer": {
     "mass": 1100,

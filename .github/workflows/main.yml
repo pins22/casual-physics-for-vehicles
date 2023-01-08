@@ -24,6 +24,8 @@ jobs:
         architecture: x64
     - name: Setup dotnet
       run: choco install mono
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.1
     - uses: actions/checkout@v3
     - name: make
       run: make

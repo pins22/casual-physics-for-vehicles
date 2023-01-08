@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using static cpv.Common.Common;
 
 namespace cpv
 {
@@ -23,7 +24,7 @@ namespace cpv
             instance = IntPtr.Zero;
         }
 
-        public void initialize(string initJson)
+        public void Initialize(string initJson)
         {
             MainEngine_initialize(instance, initJson);
         }
@@ -33,38 +34,38 @@ namespace cpv
             return MainEngine_calculateLongitudinalForce(instance, velocity, slope, brakeAmount);
         }
 
-        private IntPtr engineInstance;
-        private IntPtr brakeInstance;
-        private IntPtr transmissionInstance;
-        private IntPtr longitudinalForceModelInstance;
+        private readonly IntPtr engineInstance;
+        private readonly IntPtr brakeInstance;
+        private readonly IntPtr transmissionInstance;
+        private readonly IntPtr longitudinalForceModelInstance;
         private IntPtr instance;
 
         public VehicleEngine vehicleEngine;
         public Brake brake;
         public Transmission transmission;
 
-        [DllImport("libengine.dll")]
+        [DllImport(DllName)]
         private static extern IntPtr MainEngine_new();
 
-        [DllImport("libengine.dll")]
+        [DllImport(DllName)]
         private static extern void MainEngine_delete(IntPtr engine);
 
-        [DllImport("libengine.dll")]
+        [DllImport(DllName)]
         private static extern void MainEngine_initialize(IntPtr engine, String str);
 
-        [DllImport("libengine.dll")]
+        [DllImport(DllName)]
         private static extern IntPtr MainEngine_getEngine(IntPtr engine);
 
-        [DllImport("libengine.dll")]
+        [DllImport(DllName)]
         private static extern IntPtr MainEngine_getBrake(IntPtr engine);
 
-        [DllImport("libengine.dll")]
+        [DllImport(DllName)]
         private static extern IntPtr MainEngine_getTransmission(IntPtr engine);
 
-        [DllImport("libengine.dll")]
+        [DllImport(DllName)]
         private static extern IntPtr MainEngine_getLongitudinalForceModel(IntPtr engine);
 
-        [DllImport("libengine.dll")]
+        [DllImport(DllName)]
         private static extern double MainEngine_calculateLongitudinalForce(IntPtr engine, double velocity, double slope, double brakeAmount);
     }
 }

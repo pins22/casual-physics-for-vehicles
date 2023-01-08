@@ -4,11 +4,20 @@
 
 extern "C"
 {
+    DLL_EXPORT cpv::vehicle::Transmission *Transmission_new()
+    {
+        return new cpv::vehicle::Transmission();
+    }
+
+    DLL_EXPORT void Transmission_delete(cpv::vehicle::Transmission *transmission)
+    {
+        delete transmission;
+    }
+
     DLL_EXPORT void Transmission_setFinalDriveRatio(cpv::vehicle::Transmission *transmission, double finalDriveRatio)
     {
         if (transmission)
         {
-
             transmission->setFinalDriveRatio(finalDriveRatio);
         }
     }
@@ -54,12 +63,12 @@ extern "C"
         transmission->setGearRatios(std::move(gearRatiosVector));
     }
 
-    DLL_EXPORT void Transmission_getGearRatios(cpv::vehicle::Transmission *transmission, double** data, int *size)
+    DLL_EXPORT void Transmission_getGearRatios(cpv::vehicle::Transmission *transmission, double **data, int *size)
     {
 
         const std::vector<double> &gearRatios = transmission->getGearRatios();
         *size = gearRatios.size();
-        double *gearRatiosArray = static_cast<double*>(malloc(*size * sizeof(double)));
+        double *gearRatiosArray = static_cast<double *>(malloc(*size * sizeof(double)));
         std::copy(gearRatios.begin(), gearRatios.end(), gearRatiosArray);
 
         *data = gearRatiosArray;

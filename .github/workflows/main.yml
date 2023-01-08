@@ -31,3 +31,8 @@ jobs:
       run: make
     - name: Build assembly
       run: msbuild c#\cpv\cpv.sln
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Library
+        path: C:\Program Files\CPV\libengine.dll
+

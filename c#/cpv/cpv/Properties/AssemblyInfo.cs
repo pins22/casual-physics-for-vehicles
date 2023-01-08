@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTitle("cpv")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Pins 22")]
 [assembly: AssemblyProduct("")]
 [assembly: AssemblyCopyright("${AuthorCopyright}")]
 [assembly: AssemblyTrademark("")]

@@ -121,4 +121,13 @@ extern "C"
 
         return false;
     }
+
+    DLL_EXPORT bool Vector3_notEquals(cpv::Vector3 *vector, cpv::Vector3 *other)
+    {
+        if(vector && other) {
+            return *vector != *other;
+        }
+
+        return false;
+    }
 }

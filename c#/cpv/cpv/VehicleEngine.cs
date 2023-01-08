@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using static cpv.Common.Common;
 
 namespace cpv
 {
@@ -7,14 +8,20 @@ namespace cpv
     {
         public VehicleEngine()
         {
-            instance = IntPtr.Zero;
+            instance = Engine_new();
         }
 
-        public VehicleEngine(IntPtr instance) {
+        public VehicleEngine(IntPtr instance, bool managed = false) {
             this.instance = instance;
+            this.managed = managed;
         }
 
-        public int idleRpm
+        ~VehicleEngine()
+        {
+            Engine_delete(instance);
+        }
+
+        public int IdleRpm
         {
             get
             {
@@ -26,7 +33,7 @@ namespace cpv
             }
         }
 
-        public int maxRpm
+        public int MaxRpm
         {
             get
             {
@@ -40,7 +47,7 @@ namespace cpv
 
         }
 
-        public int rpm
+        public int Rpm
         {
             get
             {
@@ -52,7 +59,7 @@ namespace cpv
             }
         }
 
-        public double throttle
+        public double Throttle
         {
             get
             {
@@ -64,30 +71,37 @@ namespace cpv
             }
         }
 
-        private IntPtr instance;
+        private readonly IntPtr instance;
+        private readonly bool managed;
 
-        [DllImport("libengine.dll")]
+        [DllImport(DllName)]
+        private static extern IntPtr Engine_new();
+
+        [DllImport(DllName)]
+        private static extern void Engine_delete(IntPtr engine);
+
+        [DllImport(DllName)]
         private static extern void Engine_setIdleRpm(IntPtr engine, int idleRpm);
 
-        [DllImport("libengine.dll")]
+        [DllImport(DllName)]
         private static extern int Engine_getIdleRpm(IntPtr engine);
 
-        [DllImport("libengine.dll")]
+        [DllImport(DllName)]
         private static extern void Engine_setMaxRpm(IntPtr engine, int maxRpm);
 
-        [DllImport("libengine.dll")]
+        [DllImport(DllName)]
         private static extern int Engine_getMaxRpm(IntPtr engine);
 
-        [DllImport("libengine.dll")]
+        [DllImport(DllName)]
         private static extern void Engine_setRpm(IntPtr engine, int rpm);
 
-        [DllImport("libengine.dll")]
+        [DllImport(DllName)]
         private static extern int Engine_getRpm(IntPtr engine);
 
-        [DllImport("libengine.dll")]
+        [DllImport(DllName)]
         private static extern void Engine_setThrottle(IntPtr engine, double throttle);
 
-        [DllImport("libengine.dll")]
+        [DllImport(DllName)]
         private static extern double Engine_getThrottle(IntPtr engine);
 
     }

@@ -42,9 +42,13 @@
     <Compile Include="core\Vector3.cs" />
     <Compile Include="core\FunctionCurve2.cs" />
     <Compile Include="core\FunctionCurve3.cs" />
+    <Compile Include="Common\Common.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

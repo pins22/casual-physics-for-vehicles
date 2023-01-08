@@ -33,8 +33,8 @@ jobs:
       run: msbuild c#\cpv\cpv.sln
     - uses: actions/upload-artifact@v3
       with:
-        name: Library
-        path: 
-          - C:\Program Files\CPV\engine.dll
-          - c#\cpv\cpv\bin\Debug\cpv.dll
+        name: Library 
+        path: |
+          C:\Program Files\CPV\engine.dll
+          c#\cpv\cpv\bin\Debug\cpv.dll
 

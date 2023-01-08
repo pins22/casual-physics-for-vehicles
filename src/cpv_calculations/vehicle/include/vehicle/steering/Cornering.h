@@ -26,6 +26,18 @@ namespace cpv
             Cornering(Tyre frontTyre, Tyre rearTyre, double wheelBase);
 
             /**
+             * @brief Calculate the car turning torque[Nm]
+             * @details The car turning torque is calculated using the front and rear wheel lateral force
+             * 
+             * @param steeringAngle User input
+             * @param frontWheelLateralForce Get from LateralForceModel class
+             * @param rearWheelLateralForce Get from LateralForceModel class
+             * @param percentageOfWeightOnFrontWheel the percentage of weight on the front wheel
+             * @return double 
+             */
+            double getCarTurningTorque(double steeringAngle, double frontWheelLateralForce, double rearWheelLateralForce, double percentageOfWeightOnFrontWheel);
+            
+            /**
              * @brief Get the angular velocity of the vehicle
              *
              * @param longitudinalVelocity the longitudinal velocity[m/s] of the vehicle

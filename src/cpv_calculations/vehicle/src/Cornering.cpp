@@ -24,6 +24,12 @@ namespace cpv
             this->wheelBase = wheelBase;
         }
 
+        // calculate the car turning torque [Nm]
+        double Cornering::getCarTurningTorque(double steeringAngle, double frontWheelLateralForce, double rearWheelLateralForce, double percentageOfWeightOnFrontWheel)
+        {
+            return cos(steeringAngle) * frontWheelLateralForce * (1 - percentageOfWeightOnFrontWheel) * wheelBase - rearWheelLateralForce * percentageOfWeightOnFrontWheel * wheelBase;
+        }
+
         // calculate the angular velocity of the vehicle [rad/s]
         double Cornering::getAngularVelocity(double longitudinalVelocity, double steeringAngle)
         {

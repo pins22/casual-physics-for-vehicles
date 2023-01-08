@@ -34,5 +34,5 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: Library
-        path: C:\Program Files\CPV\libengine.dll
+        path: C:\Program Files\CPV\engine.dll
 

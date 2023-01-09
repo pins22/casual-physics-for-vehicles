@@ -38,10 +38,10 @@
     <Compile Include="VehicleEngine.cs" />
     <Compile Include="Brake.cs" />
     <Compile Include="Transmission.cs" />
-    <Compile Include="core\Vector2.cs" />
-    <Compile Include="core\Vector3.cs" />
-    <Compile Include="core\FunctionCurve2.cs" />
-    <Compile Include="core\FunctionCurve3.cs" />
+    <Compile Include="Core\Vector2.cs" />
+    <Compile Include="Core\Vector3.cs" />
+    <Compile Include="Core\FunctionCurve2.cs" />
+    <Compile Include="Core\FunctionCurve3.cs" />
     <Compile Include="Common\Common.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ProjectExtensions>

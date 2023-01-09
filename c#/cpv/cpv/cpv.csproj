@@ -53,6 +53,9 @@
   <ItemGroup>
     <Folder Include="Core\" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Vehicle\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ProjectExtensions>
     <MonoDevelop>

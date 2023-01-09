@@ -1,7 +1,4 @@
-
-
 name: C/C++ CI
-
 on:
   push:
     branches: [ main ]
@@ -16,7 +13,7 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.x'
-    - name: Install Python Dependencies
+    - name: Install meson and ninja 
       run: pip install meson ninja
     - name: Prepare MSVC
       uses: bus1/cabuild/action/msdevshell@v1
@@ -39,4 +36,3 @@ jobs:
       with:
         name: Assembly
         path: c#\cpv\cpv\bin\Release\cpv.dll
-

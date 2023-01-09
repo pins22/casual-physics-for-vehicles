@@ -30,7 +30,7 @@ jobs:
     - name: Build 
       run: make
     - name: Build assembly
-      run: msbuild c#\cpv\cpv.sln
+      run: msbuild c#\cpv\cpv.sln /property:Configuration=Release
     - uses: actions/upload-artifact@v3
       with:
         name: Library
@@ -38,5 +38,5 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: Assembly
-        path: c#\cpv\cpv\bin\Debug\cpv.dll
+        path: c#\cpv\cpv\bin\Release\cpv.dll
 

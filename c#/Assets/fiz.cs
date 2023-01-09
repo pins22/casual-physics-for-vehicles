@@ -61,8 +61,6 @@ public class fiz : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
         if(Input.GetKeyDown(KeyCode.Space) == true)
             mrb.velocity = Vector3.up * 5;
     }

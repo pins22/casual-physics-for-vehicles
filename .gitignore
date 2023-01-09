@@ -38,3 +38,5 @@ _build
 
 **/builddir
 subprojects
+c#/cpv/cpv/bin/*
+c#/cpv/cpv/obj/*

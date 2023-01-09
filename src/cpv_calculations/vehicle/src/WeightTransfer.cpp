@@ -54,7 +54,7 @@ namespace cpv
 
         double WeightTransfer::getLatWeightTransferFromAcceleration(double frontLatWeightTransferAccel, double rearLatWeightTransferAccel)
         {
-            return (frontLatWeightTransferAccel + rearLatWeightTransferAccel);
+            return frontLatWeightTransferAccel + rearLatWeightTransferAccel;
         }
 
         double WeightTransfer::getBodyRollAngleFromLatWeightTransfer(double lateralAcceleration, double lateralWeightTransfer)

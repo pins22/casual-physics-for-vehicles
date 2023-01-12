@@ -37,34 +37,54 @@ namespace cpv
             return (weight * (1 - weightDistributionFront));
         }
 
-        double WeightTransfer::getLongitudinalWeightTransferFromAcceleration(double longitudinalAcceleration)
+        double WeightTransfer::getLongWeightTransferFromAcceleration(double longitudinalAcceleration)
         {
             return (vehicleMass * longitudinalAcceleration * (centreOfGravityHeight / wheelBase));
         }
 
-        double WeightTransfer::getLateralWeightTransferFromAcceleration(double lateralAcceleration, double weightOnFrontAxle, double weightOnRearAxle)
-        {
-            return getFrontLateralWeightTransferFromAcceleration(lateralAcceleration, weightOnFrontAxle) + getRearLateralWeightTransferFromAcceleration(lateralAcceleration, weightOnRearAxle);
-        }
-
-        double WeightTransfer::getBodyRollAngleFromLateralWeightTransfer(double lateralAcceleration, double lateralWeightTransfer)
-        {
-            return sgn(lateralAcceleration) * (lateralWeightTransfer / weight) * maxBodyRollAngle;
-        }
-
-        double WeightTransfer::getLateralWeightTransferFromBodyRoll(double lateralAcceleration, double bodyRollAngle)
-        {
-            return (sgn(lateralAcceleration) * centreOfGravityHeight * sin(abs(bodyRollAngle)) / trackWidth) * weight;
-        }
-
-        double WeightTransfer::getFrontLateralWeightTransferFromAcceleration(double lateralAcceleration, double weightOnFrontAxle)
+        double WeightTransfer::getFrontLatWeightTransferFromAcceleration(double lateralAcceleration, double weightOnFrontAxle)
         {
             return (lateralAcceleration / gravity) * weightOnFrontAxle * centreOfGravityHeight / trackWidth;
         }
 
-        double WeightTransfer::getRearLateralWeightTransferFromAcceleration(double lateralAcceleration, double weightOnRearAxle)
+        double WeightTransfer::getRearLatWeightTransferFromAcceleration(double lateralAcceleration, double weightOnRearAxle)
         {
             return (lateralAcceleration / gravity) * weightOnRearAxle * centreOfGravityHeight / trackWidth;
+        }
+
+        double WeightTransfer::getLatWeightTransferFromAcceleration(double frontLatWeightTransferAccel, double rearLatWeightTransferAccel)
+        {
+            return frontLatWeightTransferAccel + rearLatWeightTransferAccel;
+        }
+
+        double WeightTransfer::getBodyRollAngleFromLatWeightTransfer(double lateralAcceleration, double lateralWeightTransfer)
+        {
+            return sgn(lateralAcceleration) * (lateralWeightTransfer / weight) * maxBodyRollAngle;
+        }
+
+        double WeightTransfer::getLatWeightTransferFromBodyRoll(double lateralAcceleration, double bodyRollAngle)
+        {
+            return (sgn(lateralAcceleration) * centreOfGravityHeight * sin(abs(bodyRollAngle)) / trackWidth) * weight;
+        }
+
+        double WeightTransfer::getFrontRightWheelWeightChange(double frontLatWeightTransfer, double longWeightTransferAccel, double weightTransferRoll)
+        {
+            return -frontLatWeightTransfer + longWeightTransferAccel - (weightTransferRoll / 2);
+        }
+
+        double WeightTransfer::getFrontLeftWheelWeightChange(double frontLatWeightTransfer, double longWeightTransferAccel, double weightTransferRoll)
+        {
+            return frontLatWeightTransfer + longWeightTransferAccel + (weightTransferRoll / 2);
+        }
+
+        double WeightTransfer::getRearRightWheelWeightChange(double rearLatWeightTransfer, double longWeightTransferAccel, double weightTransferRoll)
+        {
+            return -rearLatWeightTransfer - longWeightTransferAccel - (weightTransferRoll / 2);
+        }
+
+        double WeightTransfer::getRearLeftWheelWeightChange(double rearLatWeightTransfer, double longWeightTransferAccel, double weightTransferRoll)
+        {
+            return rearLatWeightTransfer - longWeightTransferAccel + (weightTransferRoll / 2);
         }
 
         template <typename T>

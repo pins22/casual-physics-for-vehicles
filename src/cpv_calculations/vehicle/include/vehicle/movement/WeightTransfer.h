@@ -39,21 +39,40 @@ namespace cpv
 
             /**
              * @brief Get the longitudinal weight transfer of the vehicle from acceleration (+ for front, - for rear)
-             * @details The weight transfer is calculated using the longitudinal acceleration of the vehicle
+             * @details The weight transfer is calculated using the longitudinal acceleration of the vehicle and is the change in weight on the front or rear axle
              *
              * @param longitudinalAcceleration the longitudinal acceleration of the vehicle [m/s^2]
              */
-            double getLongitudinalWeightTransferFromAcceleration(double longitudinalAcceleration);
+            double getLongWeightTransferFromAcceleration(double longitudinalAcceleration);
+
+            /**
+             * @brief Get the front lateral weight transfer of the vehicle from acceleration (+ for left, - for right)
+             * @details The weight transfer is calculated using the lateral acceleration of the vehicle
+             *
+             * @param lateralAcceleration the lateral acceleration of the vehicle [m/s^2]
+             * @param weightOnFrontAxle the weight on the front axle of the vehicle [N]
+             */
+            double getFrontLatWeightTransferFromAcceleration(double lateralAcceleration, double weightOnFrontAxle);
+
+            /**
+             * @brief Get the rear lateral weight transfer of the vehicle from acceleration (+ for left, - for right)
+             * @details The weight transfer is calculated using the lateral acceleration of the vehicle
+             *
+             * @param lateralAcceleration the lateral acceleration of the vehicle [m/s^2]
+             * @param weightOnRearAxle the weight on the rear axle of the vehicle [N]
+             */
+            double getRearLatWeightTransferFromAcceleration(double lateralAcceleration, double weightOnRearAxle);
 
             /**
              * @brief Get the lateral weight transfer of the vehicle from acceleration (+ for left, - for right)
              * @details The weight transfer is calculated using the lateral acceleration of the vehicle
              *
-             * @param lateralAcceleration the lateral acceleration of the vehicle [m/s^2]
-             * @param weightOnFrontAxle the weight on the front axle of the vehicle [N]
-             * @param weightOnRearAxle the weight on the rear axle of the vehicle [N]
+             * @param frontLatWeightTransferAccel the front change in weight due to lateral acceleration of the vehicle [m/s^2] (return of getLongWeightTransferFromAcceleration())
+             * @param rearLatWeightTransferAccel the rear change in weight due to lateral acceleration of the vehicle [m/s^2] (return of getLongWeightTransferFromAcceleration())
+             *
+             * @return double
              */
-            double getLateralWeightTransferFromAcceleration(double lateralAcceleration, double weightOnFrontAxle, double weightOnRearAxle);
+            double getLatWeightTransferFromAcceleration(double frontLatWeightTransferAccel, double rearLatWeightTransferAccel);
 
             /**
              * @brief Get the body roll angle of the vehicle from lateral weight transfer (+ for left, - for right)
@@ -62,7 +81,7 @@ namespace cpv
              * @param lateralAcceleration the lateral acceleration of the vehicle [m/s^2]
              * @param lateralWeightTransfer the lateral weight transfer of the vehicle [N] (change in weight on the left or right axle)
              */
-            double getBodyRollAngleFromLateralWeightTransfer(double lateralAcceleration, double lateralWeightTransfer);
+            double getBodyRollAngleFromLatWeightTransfer(double lateralAcceleration, double lateralWeightTransfer);
 
             /**
              * @brief Get the weight transfer due to body roll (+ for left, - for right)
@@ -71,7 +90,55 @@ namespace cpv
              * @param lateralAcceleration the lateral acceleration of the vehicle [m/s^2]
              * @param bodyRollAngle the body roll angle of the vehicle [rad]
              */
-            double getLateralWeightTransferFromBodyRoll(double lateralAcceleration, double bodyRollAngle);
+            double getLatWeightTransferFromBodyRoll(double lateralAcceleration, double bodyRollAngle);
+
+            /**
+             * @brief Get amount of change in weight on the front right wheel.
+             * @details The change in weight is calculated using the lateral weight transfer of the vehicle and the longitudinal weight transfer of the vehicle
+             *
+             * @param frontLatWeightTransfer the lateral weight transfer of the vehicle [N] (change in weight on the left or right axle) (return of function getFrontLatWeightTransferFromAcceleration())
+             * @param longWeightTransferAccel the longitudinal weight transfer of the vehicle [N] due to acceleration
+             * @param weightTransferRoll the weight transfer of the vehicle [N] due to body roll (get from func getLatWeightTransferFromBodyRoll())
+             * 
+             * @return double
+             */
+            double getFrontRightWheelWeightChange(double frontLatWeightTransfer, double longWeightTransferAccel, double weightTransferRoll);
+
+            /**
+             * @brief Get amount of change in weight on the front left wheel.
+             * @details The change in weight is calculated using the lateral weight transfer of the vehicle and the longitudinal weight transfer of the vehicle
+             *
+             * @param frontLatWeightTransfer the lateral weight transfer of the vehicle [N] (change in weight on the left or right axle) (return of function getFrontLatWeightTransferFromAcceleration())
+             * @param longWeightTransferAccel the longitudinal weight transfer of the vehicle [N] due to acceleration
+             * @param weightTransferRoll the weight transfer of the vehicle [N] due to body roll (get from func getLatWeightTransferFromBodyRoll())
+             * 
+             * @return double
+             */
+            double getFrontLeftWheelWeightChange(double frontLatWeightTransfer, double longWeightTransferAccel, double weightTransferRoll);
+
+            /**
+             * @brief Get amount of change in weight on the rear right wheel.
+             * @details The change in weight is calculated using the lateral weight transfer of the vehicle and the longitudinal weight transfer of the vehicle
+             *
+             * @param rearLatWeightTransfer the lateral weight transfer of the vehicle [N] (change in weight on the left or right axle) (return of function getRearLatWeightTransferFromAcceleration())
+             * @param longWeightTransferAccel the longitudinal weight transfer of the vehicle [N] due to acceleration
+             * @param weightTransferRoll the weight transfer of the vehicle [N] due to body roll (get from func getLatWeightTransferFromBodyRoll())
+             * 
+             * @return double
+             */
+            double getRearRightWheelWeightChange(double rearLatWeightTransfer, double longWeightTransferAccel, double weightTransferRoll);
+
+            /**
+             * @brief Get amount of change in weight on the rear left wheel.
+             * @details The change in weight is calculated using the lateral weight transfer of the vehicle and the longitudinal weight transfer of the vehicle
+             *
+             * @param rearLatWeightTransfer the lateral weight transfer of the vehicle [N] (change in weight on the left or right axle) (return of function getRearLatWeightTransferFromAcceleration())
+             * @param longWeightTransferAccel the longitudinal weight transfer of the vehicle [N] due to acceleration
+             * @param weightTransferRoll the weight transfer of the vehicle [N] due to body roll (get from func getLatWeightTransferFromBodyRoll())
+             * 
+             * @return double
+             */
+            double getRearLeftWheelWeightChange(double rearLatWeightTransfer, double longWeightTransferAccel, double weightTransferRoll);
 
             // getters and setters
             double getVehicleMass();
@@ -110,24 +177,6 @@ namespace cpv
              */
             template <typename T>
             int sgn(T val);
-
-            /**
-             * @brief Get the front lateral weight transfer of the vehicle from acceleration (+ for left, - for right)
-             * @details The weight transfer is calculated using the lateral acceleration of the vehicle
-             *
-             * @param lateralAcceleration the lateral acceleration of the vehicle [m/s^2]
-             * @param weightOnFrontAxle the weight on the front axle of the vehicle [N]
-             */
-            double getFrontLateralWeightTransferFromAcceleration(double lateralAcceleration, double weightOnFrontAxle);
-
-            /**
-             * @brief Get the rear lateral weight transfer of the vehicle from acceleration (+ for left, - for right)
-             * @details The weight transfer is calculated using the lateral acceleration of the vehicle
-             *
-             * @param lateralAcceleration the lateral acceleration of the vehicle [m/s^2]
-             * @param weightOnRearAxle the weight on the rear axle of the vehicle [N]
-             */
-            double getRearLateralWeightTransferFromAcceleration(double lateralAcceleration, double weightOnRearAxle);
         };
     }
 }

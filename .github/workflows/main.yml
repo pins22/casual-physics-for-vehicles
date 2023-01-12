@@ -6,6 +6,23 @@ on:
     branches: [ main ]
 
 jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Install meson and ninja 
+      run: pip install meson ninja
+    - uses: actions/checkout@v3
+    - name: Build 
+      run: meson test -C builddir 
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Assembly
+        path: c#\cpv\cpv\bin\Release\cpv.dll
+
   build:
     runs-on: windows-latest
     steps:

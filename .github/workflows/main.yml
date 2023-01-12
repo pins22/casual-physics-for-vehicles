@@ -16,8 +16,8 @@ jobs:
     - name: Install meson and ninja 
       run: pip install meson ninja
     - uses: actions/checkout@v3
-    - name: Build 
-      run: meson test -C builddir 
+    - name: Run tests 
+      run: make test
     - uses: actions/upload-artifact@v3
       with:
         name: Assembly

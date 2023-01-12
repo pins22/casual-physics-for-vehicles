@@ -20,8 +20,8 @@ jobs:
       run: make test
     - uses: actions/upload-artifact@v3
       with:
-        name: Assembly
-        path: c#\cpv\cpv\bin\Release\cpv.dll
+        name: Testlog
+        path: builddir\meson-logs\testlog.txt
 
   build:
     runs-on: windows-latest

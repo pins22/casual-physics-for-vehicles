@@ -17,7 +17,7 @@ jobs:
       run: pip install meson ninja
     - uses: actions/checkout@v3
     - name: Run tests 
-      run: make test
+      run: make all_test
     - uses: actions/upload-artifact@v3
       with:
         name: Testlog

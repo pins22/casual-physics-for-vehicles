@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 using static cpv.Common.Common;
 
 namespace cpv {
-    class FunctionCurve2 {
+    public class FunctionCurve2 {
         FunctionCurve2()
         {
             __instance = FunctionCurve2_new();

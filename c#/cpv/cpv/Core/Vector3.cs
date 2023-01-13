@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 using static cpv.Common.Common;
 
 namespace cpv {
-    class Vector3 {
+    public class Vector3 {
 
         public Vector3()
         {

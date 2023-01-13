@@ -5,7 +5,7 @@ using static cpv.Common.Common;
 
 namespace cpv
 {
-    class Vector2
+    public class Vector2
     {
         public Vector2()
         {

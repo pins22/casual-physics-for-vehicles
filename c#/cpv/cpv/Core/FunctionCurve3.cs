@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 using static cpv.Common.Common;
 
 namespace cpv {
-    class FunctionCurve3 {
+    public class FunctionCurve3 {
 
         public FunctionCurve3()
         {

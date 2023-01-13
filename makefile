@@ -1,5 +1,5 @@
 all: setup compile install 
-test: setup compile test
+all_test: setup compile test
 setup:
 	meson setup builddir --buildtype=release
 compile:
